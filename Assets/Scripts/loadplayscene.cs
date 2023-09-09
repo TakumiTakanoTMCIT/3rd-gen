@@ -14,7 +14,12 @@ public class loadplayscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-            SceneManager.LoadScene("PlayScene");
+        /*if (Input.GetMouseButtonDown(0))
+            SceneManager.LoadScene("PlayScene");*/      //  ©‰º‚Ì‚â‚è•û‚É‚¿‚å‚Á‚Æ•Ï‚¦‚Ä‚İ‚Ü‚µ‚½iŠ¾j
+    }
+
+    public void BotanPush()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }
