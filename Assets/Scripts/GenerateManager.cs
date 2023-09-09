@@ -31,10 +31,10 @@ public class GenerateManager : MonoBehaviour
         }
 
         bigin = Instantiate(startp, tmp = new Vector3(-1f,4.5f,0f),transform.rotation);
-        bigin.name = "OhMyGod";
+        bigin.name = "StartP";
 
         finish = Instantiate(endp, tmp = new Vector3(0f + b, 3.5f + a, 0f), transform.rotation);
-        finish.name = "Mickey";
+        finish.name = "EndP";
     }
 
     void Update()

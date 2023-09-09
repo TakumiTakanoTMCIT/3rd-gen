@@ -19,13 +19,15 @@ public class Rightjudge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(thiscol);
+        //Debug.Log("Right " + ppcon.right);
+        //Debug.Log(thiscol);
+
         if (isOn == true)
         {
             //Debug.Log("isOn==true");
             if (thiscol.gameObject.tag == "Wire")
             {
-                Debug.Log("Left‚¾‚æ");
+                //Debug.Log("Left‚¾‚æ");
                 ppcon.right = true;
             }
             else
@@ -33,7 +35,7 @@ public class Rightjudge : MonoBehaviour
                 ppcon.right = false;
             }
         }
-        else if (isOn == false)
+        else
         {
             //Debug.Log("isOn==false");
             ppcon.right = false;
@@ -42,18 +44,21 @@ public class Rightjudge : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        //Debug.Log("R isOn==true");
         thiscol = col;
         isOn = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        //Debug.Log("R isOn==true");
         thiscol = col;
         isOn = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        //Debug.Log("R isOn==false");
         thiscol = col;
         isOn = false;
     }

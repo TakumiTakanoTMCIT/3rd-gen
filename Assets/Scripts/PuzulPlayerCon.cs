@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PuzulPlayerCon : MonoBehaviour
 {
-    public Transform thisObject, startObject;
+    public Transform thisObject;
     public bool up, down, right, left;
 
     Vector3 tbp , tmp;
@@ -14,12 +14,12 @@ public class PuzulPlayerCon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(Initial), 1f);
+        Invoke(nameof(Initial), 2f);
     }
 
     void Initial()
     {
-        biginp = GameObject.Find("OhMyGod");
+        biginp = GameObject.Find("StartP");
         //Debug.Log(biginp);
 
         //Vector3 tmp = thisObject.transform.position;
@@ -32,6 +32,8 @@ public class PuzulPlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Start pos" + tbp + "Player pos" + tmp);
+        //Debug.Log("ppcon  " + right);
         if(Input.GetKeyDown(KeyCode.Tab))//　←Tabキーを押されたらパズルゲームが始まる
         {
             GameStarted();
@@ -39,6 +41,7 @@ public class PuzulPlayerCon : MonoBehaviour
 
         if(gamed == true)
         {
+            //Debug.Log("Game start");
             thisObject.transform.position = tmp;
 
             if (up == true)
@@ -82,5 +85,7 @@ public class PuzulPlayerCon : MonoBehaviour
         gamed = true;
         //Debug.Log("Game was started");
         //Debug.Log(tbp);
+
+        thisObject.transform.position = tmp;
     }
 }
