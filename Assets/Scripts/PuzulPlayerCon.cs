@@ -10,6 +10,7 @@ public class PuzulPlayerCon : MonoBehaviour
     Vector3 tbp , tmp;
     GameObject biginp;
     bool gamed = false;
+    bool isclick = ifclick.onclick;
 
     // Start is called before the first frame update
     void Start()
@@ -87,5 +88,8 @@ public class PuzulPlayerCon : MonoBehaviour
         //Debug.Log(tbp);
 
         thisObject.transform.position = tmp;
+
+        isclick = true;
+        ifclick.onclick = isclick;
     }
 }
