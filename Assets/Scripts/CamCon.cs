@@ -4,26 +4,32 @@ using UnityEngine;
 
 public class CamCon : MonoBehaviour
 {
-    float playerX;
+    /*float playerX;
     Vector3 Playertmp;
     GameObject Cam;
     GameObject Player;
+    */
+
+    private void Awake()
+    {
+        //DontDestroyOnLoad(this.gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
     {
 
-        Cam = GameObject.Find("Camera");
+        /*Cam = GameObject.Find("Camera");
         Player = GameObject.Find("Player");
 
         Playertmp = Player.transform.position;
-
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        Playertmp = Player.transform.position;
+        /*Playertmp = Player.transform.position;
 
         playerX = Playertmp.x;
 
@@ -35,9 +41,6 @@ public class CamCon : MonoBehaviour
             Cam.transform.position = new Vector3(playerX, 0, -10);
         }
 
-        //new Vector2(Playertmp.x, Playertmp.y);
-        
-
-
+        //new Vector2(Playertmp.x, Playertmp.y);*/
     }
 }

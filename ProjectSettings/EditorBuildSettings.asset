@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 19f00eebfc551fb4883edd22e4e35a47
+  - enabled: 1
+    path: Assets/Scenes/PuzulScene.unity
+    guid: d12daa49ed60bd743a9566348bf83f88
   m_configObjects: {}

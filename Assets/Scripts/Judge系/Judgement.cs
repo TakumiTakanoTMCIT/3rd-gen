@@ -26,7 +26,7 @@ public class Judgement : MonoBehaviour
 
         if (thisObject.name == "Up")
         {
-            Debug.Log("Up‚¾‚æ");
+            //Debug.Log("Up‚¾‚æ");
             ppcon.up=true;
             //Debug.Log("UpisEnter");
         }
@@ -37,7 +37,7 @@ public class Judgement : MonoBehaviour
         
         if(thisObject.name == "Down")
         {
-            Debug.Log("Down‚¾‚æ");
+            //Debug.Log("Down‚¾‚æ");
             ppcon.down=true;
             //Debug.Log("DownisEnter");
         }
@@ -49,7 +49,7 @@ public class Judgement : MonoBehaviour
         
         if(thisObject.name == "Right")
         {
-            Debug.Log("Right‚¾‚æ");
+            //Debug.Log("Right‚¾‚æ");
             ppcon.right = true;
             //Debug.Log("RightisEnter");
         }
@@ -60,7 +60,7 @@ public class Judgement : MonoBehaviour
 
         if(thisObject.name == "Left")
         {
-            Debug.Log("Left‚¾‚æ");
+            //Debug.Log("Left‚¾‚æ");
             ppcon.left = true;
             //Debug.Log("LeftisEnter");
         }

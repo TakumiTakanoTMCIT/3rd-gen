@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Downjudge : MonoBehaviour
+public class LeftJudge : MonoBehaviour
 {
     public GameObject thisObject;
     PuzulPlayerCon ppcon;
@@ -24,18 +24,17 @@ public class Downjudge : MonoBehaviour
             //Debug.Log("isOn==true");
             if (thiscol.gameObject.tag == "Wire")
             {
-                Debug.Log("Left‚¾‚æ");
-                ppcon.down = true;
+                //Debug.Log("Left‚¾‚æ");
+                ppcon.left = true;
             }
             else
             {
-                ppcon.down = false;
+                ppcon.left = false;
             }
-        }
-        else if (isOn == false)
+        }else if(isOn == false)
         {
             //Debug.Log("isOn==false");
-            ppcon.down = false;
+            ppcon.left = false;
         }
     }
 

@@ -121,4 +121,14 @@ public class PlayerCon : MonoBehaviour
         // Œ»İ‚ÌƒV[ƒ“‚ğÄ“Ç‚İ‚İ‚·‚é
         SceneManager.LoadScene(loadScene.name);
     }
+
+    public void MovePuzulScene()
+    {
+        
+    }
+
+    public void MoveActionScene()
+    {
+        
+    }
 }

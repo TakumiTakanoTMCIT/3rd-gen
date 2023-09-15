@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzulPlayerCon : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class PuzulPlayerCon : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Tab))//　←Tabキーを押されたらパズルゲームが始まる
         {
             GameStarted();
+
+            SaveInfo.instance.IntoPuzulScene();
         }
 
         if(gamed == true)
