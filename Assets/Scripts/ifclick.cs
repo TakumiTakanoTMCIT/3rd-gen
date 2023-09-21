@@ -6,7 +6,7 @@ public class ifclick : MonoBehaviour
 {
     public GameObject thisObject;
     public int num = 0;
-    public static bool onclick = false;
+    public static bool GameStatus;
     Renderer sren;
     Color color;
     // Start is called before the first frame update
@@ -30,13 +30,16 @@ public class ifclick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(onclick);
+        //Debug.Log(GameStatus);
     }
 
-    public void Clicked()
+    public void Clickeddddddd()
     {
-        if (onclick == false) 
+        //Debug.Log("Clickeddddddddddddd");
+        if (GameStatus == true)
         {
+            //Debug.Log("ƒNƒŠƒbƒN‚³‚ê‚Ü‚µ‚½");
+
             if (num == 2)
             {
                 num = 0;

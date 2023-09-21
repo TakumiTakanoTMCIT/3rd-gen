@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GenerateManager : MonoBehaviour
 {
+    public float startpoint_X, startpoint_Y , endpoint_X , endpoint_Y;
     public Transform myCube;
     public GameObject startp, endp;
     GameObject bigin , finish;
@@ -12,8 +13,8 @@ public class GenerateManager : MonoBehaviour
     private int a, b;
     /*int r = 0;
     int i = 0;*/
-    // Start is called before the first frame update
-    void Start()
+    
+    public void BiginGame()
     {
         Vector3 tmp = myCube.transform.position;
 
@@ -22,7 +23,7 @@ public class GenerateManager : MonoBehaviour
             for (b = 0; b < xCount; ++b)
             {
                 //Debug.Log(a + "  " +b);
-                Instantiate(myCube, tmp = new Vector3(0f + b, 4.5f + a, 0f), transform.rotation);
+                Instantiate(myCube, tmp = new Vector3(startpoint_X + b, startpoint_Y + a, 0f), transform.rotation);
 
                 //Debug.Log("b" + a + " " + b);
             }
@@ -30,11 +31,19 @@ public class GenerateManager : MonoBehaviour
             //Debug.Log("a" + a + " " + b);
         }
 
-        bigin = Instantiate(startp, tmp = new Vector3(-1f,4.5f,0f),transform.rotation);
+        bigin = Instantiate(startp, tmp = new Vector3(startpoint_X + -1f, startpoint_Y, 0f), transform.rotation);
         bigin.name = "StartP";
 
-        finish = Instantiate(endp, tmp = new Vector3(0f + b, 3.5f + a, 0f), transform.rotation);
+        finish = Instantiate(endp, tmp = new Vector3( b + startpoint_X , a + startpoint_Y - 1f, 0f), transform.rotation);
         finish.name = "EndP";
+
+        Debug.Log("lastpoint" + b + " " + a);
+    }
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
     }
 
     void Update()
@@ -56,4 +65,5 @@ public class GenerateManager : MonoBehaviour
             r++;
         }*/
     }
+
 }

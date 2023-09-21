@@ -8,12 +8,18 @@ public class Rightjudge : MonoBehaviour
     PuzulPlayerCon ppcon;
     GameObject puzulp;
     Collider2D thiscol;
-    bool isOn = false;
+    bool isOn;
     // Start is called before the first frame update
     void Start()
     {
+        isOn = false;
+    }
+
+    public void Prepare()
+    {
         puzulp = GameObject.Find("PuzulPlayer");
         ppcon = puzulp.GetComponent<PuzulPlayerCon>();
+        isOn = true;
     }
 
     // Update is called once per frame
@@ -27,7 +33,7 @@ public class Rightjudge : MonoBehaviour
             //Debug.Log("isOn==true");
             if (thiscol.gameObject.tag == "Wire")
             {
-                //Debug.Log("Left‚¾‚æ");
+                //Debug.Log("Right‚¾‚æ");
                 ppcon.right = true;
             }
             else
@@ -35,11 +41,11 @@ public class Rightjudge : MonoBehaviour
                 ppcon.right = false;
             }
         }
-        else
+        /*else
         {
             //Debug.Log("isOn==false");
             ppcon.right = false;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)

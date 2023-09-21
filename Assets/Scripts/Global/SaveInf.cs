@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SaveInfo : MonoBehaviour
+public class SaveInf : MonoBehaviour
 {
     GameObject Player;
     Transform TF;
     //Vector3 saveTF;
-    Vector3 globalpos; 
+    Vector3 globalpos;
     //Vector3 tbp;
     // Start is called before the first frame update
 
-    public static SaveInfo instance;
+    public static SaveInf instance;
 
     private void Awake()
     {

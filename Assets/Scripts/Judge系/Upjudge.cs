@@ -8,12 +8,18 @@ public class Upjudge : MonoBehaviour
     PuzulPlayerCon ppcon;
     GameObject puzulp;
     Collider2D thiscol;
-    bool isOn = false;
+    bool isOn;
     // Start is called before the first frame update
     void Start()
     {
+        isOn = false;
+    }
+
+    public void Prepare()
+    {
         puzulp = GameObject.Find("PuzulPlayer");
         ppcon = puzulp.GetComponent<PuzulPlayerCon>();
+        isOn = true;
     }
 
     // Update is called once per frame
@@ -32,11 +38,11 @@ public class Upjudge : MonoBehaviour
                 ppcon.up = false;
             }
         }
-        else if (isOn == false)
+        /*else if (isOn == false)
         {
             //Debug.Log("isOn==false");
             ppcon.up = false;
-        }
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)

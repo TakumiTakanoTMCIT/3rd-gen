@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class IntoActionScene : MonoBehaviour
+public class StartBu : MonoBehaviour
 {
+    public GenerateManager manager;
+    public bool click;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +16,14 @@ public class IntoActionScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            //SaveInfo.instance.IntoActionScene();
-        }
+        
+    }
+
+    public void IFCLICKED()
+    {
+        manager.BiginGame();
+
+        click = true;
+        ifclick.GameStatus = click;
     }
 }

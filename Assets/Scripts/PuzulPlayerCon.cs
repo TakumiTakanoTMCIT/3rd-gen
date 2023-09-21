@@ -10,43 +10,46 @@ public class PuzulPlayerCon : MonoBehaviour
 
     Vector3 tbp , tmp;
     GameObject biginp;
-    bool gamed = false;
-    bool isclick = ifclick.onclick;
+    public static bool gamed = false;
+    //bool isclick = ifclick.onclick;
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke(nameof(Initial), 2f);
+        //Invoke(nameof(Initial), 2f);
     }
 
-    void Initial()
+    public void Initial()
     {
         biginp = GameObject.Find("StartP");
+        thisObject.transform.position = biginp.transform.position;
         //Debug.Log(biginp);
 
         //Vector3 tmp = thisObject.transform.position;
         //thisObject.transform.position = tmp;
-
-        tbp = biginp.transform.position;
-        tmp = thisObject.transform.position;
+        //Debug.Log(tbp);
+        gamed = true;
+        Debug.Log("gamed!!!!!!!!!!!!!!!!");
     }
 
     // Update is called once per frame
     void Update()
     {
+        tmp = thisObject.transform.position;
+        Debug.Log("Playerの座標" + thisObject.transform.position);
+        Debug.Log("tmpの座標" + tmp);
+        //Debug.Log(gamed);
         //Debug.Log("Start pos" + tbp + "Player pos" + tmp);
         //Debug.Log("ppcon  " + right);
-        if(Input.GetKeyDown(KeyCode.Tab))//　←Tabキーを押されたらパズルゲームが始まる
+        if (Input.GetKeyDown(KeyCode.Tab))//　←Tabキーを押されたらパズルゲームが始まる
         {
             GameStarted();
-
-            SaveInfo.instance.IntoPuzulScene();
         }
 
         if(gamed == true)
         {
-            //Debug.Log("Game start");
-            thisObject.transform.position = tmp;
+            //Debug.Log(tmp + " " + thisObject.transform.position);
+            //Debug.Log("Playing Now");
 
             if (up == true)
             {
@@ -58,8 +61,10 @@ public class PuzulPlayerCon : MonoBehaviour
                         
             if(right == true)
             {
+                //Debug.Log("right==true");
                 if (Input.GetKeyDown(KeyCode.D))
                 {
+                    //Debug.Log("Pushed the D button");
                     tmp.x += 1;
                 }
             }
@@ -79,6 +84,8 @@ public class PuzulPlayerCon : MonoBehaviour
                     tmp.x -= 1;
                 }
             }
+
+            thisObject.transform.position = tmp;
         }
     }
 
@@ -86,13 +93,13 @@ public class PuzulPlayerCon : MonoBehaviour
     {
         //tbp = thisObject.transform.position;
         tmp = tbp;
-        gamed = true;
+        //gamed = true;
         //Debug.Log("Game was started");
         //Debug.Log(tbp);
 
         thisObject.transform.position = tmp;
 
-        isclick = true;
-        ifclick.onclick = isclick;
+        //isclick = true;
+        //ifclick.onclick = isclick;
     }
 }
