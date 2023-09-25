@@ -25,6 +25,7 @@ public class Rightjudge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Right" + isOn);
         //Debug.Log("Right " + ppcon.right);
         //Debug.Log(thiscol);
 
@@ -33,11 +34,18 @@ public class Rightjudge : MonoBehaviour
             //Debug.Log("isOn==true");
             if (thiscol.gameObject.tag == "Wire")
             {
+                Debug.Log("Wire");
                 //Debug.Log("Right‚¾‚æ");
                 ppcon.right = true;
             }
+            else if(thiscol.gameObject.tag == null)
+            {
+                Debug.Log("null");
+                ppcon.right = false;
+            }
             else
             {
+                Debug.Log("else");
                 ppcon.right = false;
             }
         }

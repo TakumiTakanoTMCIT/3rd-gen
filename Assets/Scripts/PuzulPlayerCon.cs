@@ -29,15 +29,15 @@ public class PuzulPlayerCon : MonoBehaviour
         //thisObject.transform.position = tmp;
         //Debug.Log(tbp);
         gamed = true;
-        Debug.Log("gamed!!!!!!!!!!!!!!!!");
+        //Debug.Log("gamed!!!!!!!!!!!!!!!!");
     }
 
     // Update is called once per frame
     void Update()
     {
         tmp = thisObject.transform.position;
-        Debug.Log("Playerの座標" + thisObject.transform.position);
-        Debug.Log("tmpの座標" + tmp);
+        //Debug.Log("Playerの座標" + thisObject.transform.position);
+        //Debug.Log("tmpの座標" + tmp);
         //Debug.Log(gamed);
         //Debug.Log("Start pos" + tbp + "Player pos" + tmp);
         //Debug.Log("ppcon  " + right);
