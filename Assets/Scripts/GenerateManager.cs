@@ -48,22 +48,7 @@ public class GenerateManager : MonoBehaviour
 
     void Update()
     {
-        //Vector3 tmp = myCube.transform.position;
-        //myCube.transform.position = new Vector3(tmp.x + 100, tmp.y, tmp.z);
-
-        /*if(r < xCount)
-        {
-            if (i < xCount)
-            {
-                Instantiate(myCube, tmp = new Vector3(tmp.x + r, tmp.y + i, tmp.z), transform.rotation);
-
-                Debug.Log(i);
-                i++;
-            }
-
-            Debug.Log(r);
-            r++;
-        }*/
+        
     }
 
 }

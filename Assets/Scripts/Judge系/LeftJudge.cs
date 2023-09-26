@@ -8,58 +8,63 @@ public class LeftJudge : MonoBehaviour
     PuzulPlayerCon ppcon;
     GameObject puzulp;
     Collider2D thiscol;
-    bool isOn;
+    bool game,onWire;
     // Start is called before the first frame update
     void Start()
     {
-        isOn = false;
+        game = false;
     }
 
     public void Prepare()
     {
         puzulp = GameObject.Find("PuzulPlayer");
         ppcon = puzulp.GetComponent<PuzulPlayerCon>();
-        isOn = true;
+        game = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isOn == true)
+        //Debug.Log(thiscol);
+
+        if(game == true)
         {
-            //Debug.Log("isOn==true");
-            if (thiscol.gameObject.tag == "Wire")
+            if (onWire == true)//Šî”Âã‚É‚¢‚é‚©‚Ç‚¤‚©Šm”F
             {
-                //Debug.Log("Left‚¾‚æ");
-                ppcon.left = true;
+                if (thiscol.gameObject.tag == "Wire")//WireTag‚ÉG‚ê‚Ä‚¢‚é‚È‚ç“®‚¯‚é
+                {
+                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚é‚Ì‚ÅA¶‚É“®‚¯‚Ü‚·");
+                    ppcon.left = true;
+                }
+                else//WireˆÈŠO‚É‚¢‚é‚È‚ç“®‚¯‚È‚¢
+                {
+                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚È‚¢‚Ì‚Å¶‚É‚Í“®‚¯‚Ü‚¹‚ñ");
+                    ppcon.left = false;
+                }
             }
-            else
+            else//‚¢‚È‚©‚Á‚½‚ç–³ğŒ‚ÉˆÚ“®•s‰Â
             {
+                Debug.Log("left‚Í‰½‚É‚àG‚ê‚Ä‚¢‚È‚¢");
                 ppcon.left = false;
             }
         }
-        /*else if(isOn == false)
-        {
-            //Debug.Log("isOn==false");
-            ppcon.left = false;
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        onWire = false;
         thiscol = col;
-        isOn = false;
     }
 }

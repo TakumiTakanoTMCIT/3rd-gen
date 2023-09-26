@@ -43,7 +43,7 @@ public class PuzulPlayerCon : MonoBehaviour
         //Debug.Log("ppcon  " + right);
         if (Input.GetKeyDown(KeyCode.Tab))//　←Tabキーを押されたらパズルゲームが始まる
         {
-            GameStarted();
+            //GameStarted();
         }
 
         if(gamed == true)

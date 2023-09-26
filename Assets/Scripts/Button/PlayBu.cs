@@ -12,6 +12,7 @@ public class PlayBu : MonoBehaviour
 
     public void Clickedddddddd()
     {
+        puzul.GameStarted();
         puzul.Initial();
         upjudge.Prepare();
         downjudge.Prepare();

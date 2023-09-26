@@ -8,58 +8,61 @@ public class Downjudge : MonoBehaviour
     PuzulPlayerCon ppcon;
     GameObject puzulp;
     Collider2D thiscol;
-    bool isOn;
+    bool game,onWire;
     // Start is called before the first frame update
     void Start()
     {
-       isOn = false;
+        game = false;
     }
 
     public void Prepare()
     {
         puzulp = GameObject.Find("PuzulPlayer");
         ppcon = puzulp.GetComponent<PuzulPlayerCon>();
-        isOn = true;
+        game = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isOn == true)
+        if(game==true)
         {
-            //Debug.Log("isOn==true");
-            if (thiscol.gameObject.tag == "Wire")
+            if (onWire == true)//Šî”Âã‚É‚¢‚é‚©‚Ç‚¤‚©Šm”F
             {
-                //Debug.Log("Left‚¾‚æ");
-                ppcon.down = true;
+                if (thiscol.gameObject.tag == "Wire")//WireTag‚ÉG‚ê‚Ä‚¢‚é‚È‚ç“®‚¯‚é
+                {
+                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚é‚Ì‚ÅA‰º‚É“®‚¯‚Ü‚·");
+                    ppcon.down = true;
+                }
+                else//WireˆÈŠO‚É‚¢‚é‚È‚ç“®‚¯‚È‚¢
+                {
+                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚È‚¢‚Ì‚Å‰º‚É‚Í“®‚¯‚Ü‚¹‚ñ");
+                    ppcon.down = false;
+                }
             }
-            else
+            else//‚¢‚È‚©‚Á‚½‚ç–³ğŒ‚ÉˆÚ“®•s‰Â
             {
+                Debug.Log("down‚Í‰½‚É‚àG‚ê‚Ä‚¢‚È‚¢");
                 ppcon.down = false;
             }
         }
-        /*else if (isOn == false)
-        {
-            //Debug.Log("isOn==false");
-            ppcon.down = false;
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
+        onWire = false;
         thiscol = col;
-        isOn = false;
     }
 }

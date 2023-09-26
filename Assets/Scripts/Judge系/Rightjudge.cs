@@ -8,72 +8,63 @@ public class Rightjudge : MonoBehaviour
     PuzulPlayerCon ppcon;
     GameObject puzulp;
     Collider2D thiscol;
-    bool isOn;
+    bool game , onWire;
     // Start is called before the first frame update
     void Start()
     {
-        isOn = false;
+        game = false;
     }
 
     public void Prepare()
     {
         puzulp = GameObject.Find("PuzulPlayer");
         ppcon = puzulp.GetComponent<PuzulPlayerCon>();
-        isOn = true;
+        game = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Right" + isOn);
-        //Debug.Log("Right " + ppcon.right);
         //Debug.Log(thiscol);
 
-        if (isOn == true)
+        if(game == true)
         {
-            //Debug.Log("isOn==true");
-            if (thiscol.gameObject.tag == "Wire")
+            if(onWire == true)//基板上にいるかどうか確認
             {
-                Debug.Log("Wire");
-                //Debug.Log("Rightだよ");
-                ppcon.right = true;
+                if (thiscol.gameObject.tag == "Wire")//WireTagに触れているなら動ける
+                {
+                    Debug.Log("Wireに触れているので、右に動けます");
+                    ppcon.right = true;
+                }
+                else//Wire以外にいるなら動けない
+                {
+                    Debug.Log("Wireに触れていないので右には動けません");
+                    ppcon.right = false;
+                }
             }
-            else if(thiscol.gameObject.tag == null)
+            else//いなかったら無条件に移動不可
             {
-                Debug.Log("null");
-                ppcon.right = false;
-            }
-            else
-            {
-                Debug.Log("else");
+                Debug.Log("right何にも触れていない");
                 ppcon.right = false;
             }
         }
-        /*else
-        {
-            //Debug.Log("isOn==false");
-            ppcon.right = false;
-        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        //Debug.Log("R isOn==true");
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        //Debug.Log("R isOn==true");
+        onWire = true;
         thiscol = col;
-        isOn = true;
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        //Debug.Log("R isOn==false");
+        onWire = false;
         thiscol = col;
-        isOn = false;
     }
 }
