@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearBu : MonoBehaviour
+public class GoPuzul : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,9 @@ public class ClearBu : MonoBehaviour
         
     }
 
-    public void Cleardesu()
+    public void OnClicked()//Player‚ªG‚ê‚½‚çPuzulScene‚ÉˆÚ“®‚Å‚«‚Ü‚·
     {
-        SaveInf.instance.IntoActionScene();
+        SaveInf.instance.IntoPuzulScene();
+        Debug.Log(100);
     }
 }

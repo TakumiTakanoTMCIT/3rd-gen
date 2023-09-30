@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveInf : MonoBehaviour
 {
@@ -52,17 +53,15 @@ public class SaveInf : MonoBehaviour
         //saveTF = TF.position;
 
         globalpos = TF.position;
-
-        //SceneManager.LoadScene("PuzulScene");
+        SceneManager.LoadScene("PuzulScene");
     }
 
     public void IntoActionScene()//PuzulSceneでMoveActionSceneスクリプトでSpaceを押されると、この関数が呼び出されます
     {
         //Debug.Log("moveactionscene");
-
-        //SceneManager.LoadScene("SampleScene");
-
+        SceneManager.LoadScene("SampleScene");
         Invoke(nameof(FindPlayer), 0.1f);
+        
     }
 
     public void FindPlayer()
