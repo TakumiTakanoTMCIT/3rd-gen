@@ -31,20 +31,20 @@ public class Rightjudge : MonoBehaviour
         {
             if(onWire == true)//基板上にいるかどうか確認
             {
-                if (thiscol.gameObject.tag == "Wire")//WireTagに触れているなら動ける
+                if (thiscol.gameObject.tag == "Wire" || thiscol.gameObject.tag == "Initial" || thiscol.gameObject.tag == "Finish")//WireTagに触れているなら動ける
                 {
-                    Debug.Log("Wireに触れているので、右に動けます");
+                    //Debug.Log("Wireに触れているので、右に動けます");
                     ppcon.right = true;
                 }
                 else//Wire以外にいるなら動けない
                 {
-                    Debug.Log("Wireに触れていないので右には動けません");
+                    //Debug.Log("Wireに触れていないので右には動けません");
                     ppcon.right = false;
                 }
             }
             else//いなかったら無条件に移動不可
             {
-                Debug.Log("right何にも触れていない");
+                //Debug.Log("right何にも触れていない");
                 ppcon.right = false;
             }
         }

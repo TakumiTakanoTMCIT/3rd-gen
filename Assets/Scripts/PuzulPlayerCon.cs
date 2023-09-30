@@ -102,4 +102,15 @@ public class PuzulPlayerCon : MonoBehaviour
         //isclick = true;
         //ifclick.onclick = isclick;
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("êGÇÍÇ‹ÇµÇΩ");
+        if(col.gameObject.tag == "Finish")
+        {
+            Debug.Log("PuzulClear!!");
+            SaveInf.instance.IntoActionScene();
+        }
+        
+    }
 }

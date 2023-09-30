@@ -29,20 +29,20 @@ public class Upjudge : MonoBehaviour
         {
             if (onWire == true)//Šî”Âã‚É‚¢‚é‚©‚Ç‚¤‚©Šm”F
             {
-                if (thiscol.gameObject.tag == "Wire")//WireTag‚ÉG‚ê‚Ä‚¢‚é‚È‚ç“®‚¯‚é
+                if (thiscol.gameObject.tag == "Wire" || thiscol.gameObject.tag == "Initial" || thiscol.gameObject.tag == "Finish")//WireTag‚ÉG‚ê‚Ä‚¢‚é‚È‚ç“®‚¯‚é
                 {
-                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚é‚Ì‚ÅAã‚É“®‚¯‚Ü‚·");
+                    //Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚é‚Ì‚ÅAã‚É“®‚¯‚Ü‚·");
                     ppcon.up = true;
                 }
                 else//WireˆÈŠO‚É‚¢‚é‚È‚ç“®‚¯‚È‚¢
                 {
-                    Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚È‚¢‚Ì‚Åã‚É‚Í“®‚¯‚Ü‚¹‚ñ");
+                    //Debug.Log("Wire‚ÉG‚ê‚Ä‚¢‚È‚¢‚Ì‚Åã‚É‚Í“®‚¯‚Ü‚¹‚ñ");
                     ppcon.up = false;
                 }
             }
             else//‚¢‚È‚©‚Á‚½‚ç–³ğŒ‚ÉˆÚ“®•s‰Â
             {
-                Debug.Log("up‚Í‰½‚É‚àG‚ê‚Ä‚¢‚È‚¢");
+                //Debug.Log("up‚Í‰½‚É‚àG‚ê‚Ä‚¢‚È‚¢");
                 ppcon.up = false;
             }
         }
