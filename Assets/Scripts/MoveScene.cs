@@ -8,6 +8,9 @@ public class MoveScene : MonoBehaviour
     private string Nscene , Pscene;
 
 Å@Å@public static MoveScene instance;
+
+    public GameObject clear1;
+
     private void Awake()
     {
         if (instance == null)
@@ -73,6 +76,20 @@ public class MoveScene : MonoBehaviour
 
     public void CleardGame()
     {
+        
+        Nscene = GlobalVariables.NowScene;
+        Debug.Log("NowScene :" + Nscene);
+        if(GlobalVariables.NowScene == "Stage1")
+        {
+            clear1 = GameObject.Find("Clear1");
+            GlobalVariables.clear1 = true;
+            clear1.GetComponent<Clear1>().WakeUp();
+        }
+        else if(Nscene == "Stage2")
+        {
+            GlobalVariables.clear2 = true;
+        }
+
         SceneManager.LoadScene("OpeningScene");
     }
 }

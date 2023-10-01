@@ -22,4 +22,6 @@ public static class GlobalVariables
     public static Vector3 PlayertransformpositionV3;//GlobalVariableで新しいクラスを作るとどんなときでもこの変数を使うことができるみたいです
     public static string NowScene;
     public static string NowPuzulScene;
+    public static bool clear1 , clear2;
+    public static bool alreadyclear1,alreadyclear2;
 }
