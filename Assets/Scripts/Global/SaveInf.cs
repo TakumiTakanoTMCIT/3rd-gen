@@ -65,7 +65,7 @@ public class SaveInf : MonoBehaviour
         //Debug.Log("moveactionscene");
 
         SceneManager.LoadScene(GlobalVariables.NowScene);
-        Invoke(nameof(FindPlayer), 0.1f);
+        Invoke(nameof(FindPlayer), 0.01f);
         
     }
 
