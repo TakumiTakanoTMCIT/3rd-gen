@@ -94,7 +94,7 @@ public class PlayerCon : MonoBehaviour
         if (col.gameObject.CompareTag("Goal"))
         {
             Debug.Log("ƒS[ƒ‹‚µ‚Ü‚µ‚½");
-            Death();
+            MoveScene.instance.CleardGame();
         }
 
         if(col.gameObject.CompareTag("DamageGround"))
@@ -120,15 +120,5 @@ public class PlayerCon : MonoBehaviour
         Scene loadScene = SceneManager.GetActiveScene();
         // Œ»İ‚ÌƒV[ƒ“‚ğÄ“Ç‚İ‚İ‚·‚é
         SceneManager.LoadScene(loadScene.name);
-    }
-
-    public void MovePuzulScene()
-    {
-        
-    }
-
-    public void MoveActionScene()
-    {
-        
     }
 }

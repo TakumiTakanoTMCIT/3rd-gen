@@ -69,7 +69,10 @@ public class MoveScene : MonoBehaviour
         Pscene = SceneManager.GetActiveScene().name;
 
         GlobalVariables.NowPuzulScene = Pscene;      //今のパズルシーンをグローバルに保存
+    }
 
-
+    public void CleardGame()
+    {
+        SceneManager.LoadScene("OpeningScene");
     }
 }
