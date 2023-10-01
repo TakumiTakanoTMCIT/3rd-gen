@@ -19,6 +19,5 @@ public class GoPuzul : MonoBehaviour
     public void OnClicked()//Player‚ªG‚ê‚½‚çPuzulScene‚ÉˆÚ“®‚Å‚«‚Ü‚·
     {
         SaveInf.instance.IntoPuzulScene();
-        Debug.Log(100);
     }
 }

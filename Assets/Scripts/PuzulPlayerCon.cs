@@ -105,10 +105,10 @@ public class PuzulPlayerCon : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("êGÇÍÇ‹ÇµÇΩ");
+        //Debug.Log("êGÇÍÇ‹ÇµÇΩ");
         if(col.gameObject.tag == "Finish")
         {
-            Debug.Log("PuzulClear!!");
+            //Debug.Log("PuzulClear!!");
             SaveInf.instance.IntoActionScene();
         }
         

@@ -51,15 +51,20 @@ public class SaveInf : MonoBehaviour
         //Debug.Log(TF.position);
 
         //saveTF = TF.position;
-
+        //Debug.Log(TF);
+        //Debug.Log(Player);
+        //Debug.Log("GlobalPos: " + globalpos);
+        MoveScene.instance.SaveNowScene();
         globalpos = TF.position;
         SceneManager.LoadScene("PuzulScene");
+        MoveScene.instance.SavePuzulScene();
     }
 
     public void IntoActionScene()//PuzulSceneでMoveActionSceneスクリプトでSpaceを押されると、この関数が呼び出されます
     {
         //Debug.Log("moveactionscene");
-        SceneManager.LoadScene("SampleScene");
+
+        SceneManager.LoadScene(GlobalVariables.NowScene);
         Invoke(nameof(FindPlayer), 0.1f);
         
     }

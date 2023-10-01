@@ -20,5 +20,6 @@ public class GlobalNum : MonoBehaviour
 public static class GlobalVariables
 {
     public static Vector3 PlayertransformpositionV3;//GlobalVariableで新しいクラスを作るとどんなときでもこの変数を使うことができるみたいです
-    public static string CurrentScene;　　　　　　　//←使ってない
+    public static string NowScene;
+    public static string NowPuzulScene;
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement; // コレ重要
 
 public class MoveScene : MonoBehaviour
 {
-    private string nowscene;
+    private string Nscene , Pscene;
 
 　　public static MoveScene instance;
     private void Awake()
@@ -30,7 +30,7 @@ public class MoveScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        /*if (Input.GetKeyDown(KeyCode.Tab))
         {
             nowscene = SceneManager.GetActiveScene().name;//今のシーンの名前を保存
             
@@ -48,17 +48,28 @@ public class MoveScene : MonoBehaviour
             }
             nowscene = GlobalVariables.CurrentScene;
             GlobalVariables.CurrentScene = nowscene;
-        }
+        }*/
     }
 
-    void SaveName()
+    public void SaveNowScene()
     {
-        nowscene = SceneManager.GetActiveScene().name;//今のシーンをここのnowsceneに保存
-        GlobalVariables.CurrentScene = nowscene;      //nowsceneをグローバルに保存
+        Nscene = GlobalVariables.NowScene;
+        
+
+        Nscene = SceneManager.GetActiveScene().name;
+        
+        GlobalVariables.NowScene = Nscene;      //今のアクションシーンをグローバルに保存
     }
 
-    void UseName()
+    public void SavePuzulScene()
     {
-        nowscene = GlobalVariables.CurrentScene;      //今のシーンにグローバル変数を代入
+        Pscene = GlobalVariables.NowPuzulScene;
+
+
+        Pscene = SceneManager.GetActiveScene().name;
+
+        GlobalVariables.NowPuzulScene = Pscene;      //今のパズルシーンをグローバルに保存
+
+
     }
 }
