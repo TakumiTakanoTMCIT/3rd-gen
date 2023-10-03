@@ -34,7 +34,7 @@ public class SaveInf : MonoBehaviour
         Player = GameObject.Find("Player");
         TF = Player.transform;
 
-        Debug.Log("GlobalPos: " + globalpos);
+        //Debug.Log("GlobalPos: " + globalpos);
     }
 
     // Update is called once per frame

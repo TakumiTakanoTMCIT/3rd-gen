@@ -9,7 +9,7 @@ public class MoveScene : MonoBehaviour
 
 　　public static MoveScene instance;
 
-    public GameObject clear1;
+    //public GameObject clear1;
 
     private void Awake()
     {
@@ -27,69 +27,52 @@ public class MoveScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            nowscene = SceneManager.GetActiveScene().name;//今のシーンの名前を保存
-            
-            SaveInf.instance.IntoPuzulScene();
+        
+    }
 
-            if ( nowscene == "SampleScene")
-            {
-                SceneManager.LoadScene("PuzulScene");
-                SaveInf.instance.IntoPuzulScene();
-            }
-            else if( nowscene == "PuzulScene" )
-            {
-                SceneManager.LoadScene("SampleScene");
-                SaveInf.instance.IntoActionScene();
-            }
-            nowscene = GlobalVariables.CurrentScene;
-            GlobalVariables.CurrentScene = nowscene;
-        }*/
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log(scene.name + " scene loaded");
     }
 
     public void SaveNowScene()
     {
-        Nscene = GlobalVariables.NowScene;
-        
+        GlobalVariables.NowScene = SceneManager.GetActiveScene().name;      //今のアクションシーンをグローバルに保存
 
-        Nscene = SceneManager.GetActiveScene().name;
-        
-        GlobalVariables.NowScene = Nscene;      //今のアクションシーンをグローバルに保存
+        Nscene = GlobalVariables.NowScene;
+
+        Debug.Log("今シーンがグローバルにセーブされ、そのシーンの名前は：" +Nscene+"←Nscene  " + GlobalVariables.NowScene + "←グローバルでの保存");
     }
 
     public void SavePuzulScene()
     {
-        Pscene = GlobalVariables.NowPuzulScene;
-
-
-        Pscene = SceneManager.GetActiveScene().name;
-
-        GlobalVariables.NowPuzulScene = Pscene;      //今のパズルシーンをグローバルに保存
+        GlobalVariables.NowPuzulScene = SceneManager.GetActiveScene().name;      //今のパズルシーンをグローバルに保存
     }
 
     public void CleardGame()
     {
         
         Nscene = GlobalVariables.NowScene;
+
         Debug.Log("NowScene :" + Nscene);
-        if(GlobalVariables.NowScene == "Stage1")
+        if(Nscene == "Stage1")
         {
-            clear1 = GameObject.Find("Clear1");
+            //clear1 = GameObject.Find("Clear1");
             GlobalVariables.clear1 = true;
-            clear1.GetComponent<Clear1>().WakeUp();
+
+            SceneManager.LoadScene("OpeningScene");
         }
         else if(Nscene == "Stage2")
         {
             GlobalVariables.clear2 = true;
-        }
 
-        SceneManager.LoadScene("OpeningScene");
+            SceneManager.LoadScene("OpeningScene");
+        }
     }
 }

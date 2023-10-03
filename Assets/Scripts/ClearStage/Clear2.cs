@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class Clear2 : MonoBehaviour
 {
+    bool clear;
+
     // Start is called before the first frame update
     void Start()
     {
         gameObject.SetActive(false);
+        clear = GlobalVariables.clear2;
+        WakeUp();
     }
 
     // Update is called once per frame
@@ -17,18 +21,13 @@ public class Clear2 : MonoBehaviour
         
     }
 
-    public void WakeUp()
+    void WakeUp()
     {
-        bool clear = GlobalVariables.clear2;
-        bool alclear = GlobalVariables.alreadyclear2;
-
-        if (clear == true || alclear == true)
+        if (clear == true)
         {
             gameObject.SetActive(true);
-            alclear = true;
 
+            GlobalVariables.clear2 = clear;
         }
-
-        GlobalVariables.alreadyclear2 = alclear;
     }
 }

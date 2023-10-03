@@ -23,5 +23,5 @@ public static class GlobalVariables
     public static string NowScene;
     public static string NowPuzulScene;
     public static bool clear1 , clear2;
-    public static bool alreadyclear1,alreadyclear2;
+    //public static bool alreadyclear1,alreadyclear2;
 }
