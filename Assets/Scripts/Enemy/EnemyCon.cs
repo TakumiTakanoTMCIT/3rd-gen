@@ -35,4 +35,9 @@ public class EnemyCon : MonoBehaviour
     {
         powerX = 1.0f;
     }
+
+    public void Death()
+    {
+        Destroy(this.gameObject);
+    }
 }
