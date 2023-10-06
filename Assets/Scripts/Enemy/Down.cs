@@ -8,7 +8,7 @@ public class Down : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log("UP‚ª‚È‚É‚©‚ÉG‚ê‚½");
+        Debug.Log("UP‚ª‚È‚É‚©‚ÉG‚ê‚½");
 
         if (col.gameObject.CompareTag("Player"))
         {

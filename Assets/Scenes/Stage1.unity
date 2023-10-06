@@ -546,7 +546,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.00000023841858, y: -0.42613387}
@@ -1801,7 +1801,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e272da3dc098c984e9f27c3cbf118cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  con: {fileID: 742150133}
+  Econ: {fileID: 742150133}
+  con: {fileID: 118029538}
 --- !u!61 &471775356
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1812,7 +1813,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.5743544, y: 0.09881365}
@@ -2643,8 +2644,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742150128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.72, y: -3.9, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.76, y: 2.41, z: 0}
+  m_LocalScale: {x: 1, y: 1.19, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1082710793}
@@ -4605,7 +4606,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.58053017, y: 0.1482203}
@@ -4654,7 +4655,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14da4adeaaf31de4aae2a7e7375b8744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  con: {fileID: 742150133}
+  Econ: {fileID: 742150133}
+  con: {fileID: 118029538}
 --- !u!4 &1618687796 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7116220024602586912, guid: 5d37d8b382336524e8bbd2270e218c1e, type: 3}

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Right : MonoBehaviour
 {
-    public EnemyCon con;
+    public EnemyCon Econ;
+    public PlayerCon con;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,15 @@ public class Right : MonoBehaviour
         if(col.gameObject.CompareTag("Object"))
         {
             Debug.Log("RightÇ…êGÇÍÇ‹ÇµÇΩ");
-            con.OnRight();
+            Econ.OnRight();
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            con.Death();
         }
     }
 }

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Left : MonoBehaviour
 {
-    public EnemyCon con;
+    public EnemyCon Econ;
+    public PlayerCon con;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,15 @@ public class Left : MonoBehaviour
         if(col.gameObject.CompareTag("Object"))
         {
             Debug.Log("LeftÇ…êGÇÍÇ‹ÇµÇΩ");
-            con.OnLeft();
+            Econ.OnLeft();
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            con.Death();
         }
     }
 }
