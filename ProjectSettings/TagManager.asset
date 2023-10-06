@@ -15,6 +15,10 @@ TagManager:
   - Wire
   - Insulator
   - Initial
+  - EUp
+  - EDown
+  - ELeft
+  - ERight
   layers:
   - Default
   - TransparentFX

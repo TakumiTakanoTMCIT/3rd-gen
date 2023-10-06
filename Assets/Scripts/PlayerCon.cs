@@ -19,6 +19,8 @@ public class PlayerCon : MonoBehaviour
     bool isJumping;
     float veloX;
 
+    GameObject Lefter , Righter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -102,6 +104,18 @@ public class PlayerCon : MonoBehaviour
             Debug.Log("É_ÉÅÅ[ÉWè∞Ç…êGÇÍÇ‹ÇµÇΩ");
             Death();
         }
+
+        /*if(col.gameObject.CompareTag("ELeft"))//            ìGÇ…êGÇÍÇΩÇÁ....
+        {
+            Lefter = GameObject.Find("Enemy");
+            Lefter.GetComponent<EnemyCon>().OnLeft();
+        }
+
+        if(col.gameObject.CompareTag("ERight"))
+        {
+            Righter = GameObject.Find("Right");
+            Righter.GetComponent<EnemyCon>().OnRight();
+        }*/
     }
 
     void Jump(Rigidbody2D rb, float lvl)
