@@ -86,8 +86,8 @@ public class PlayerCon : MonoBehaviour
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            Death();
-            Debug.Log("Ž€‚É‚Ü‚µ‚½");
+            /*Death();
+            Debug.Log("Ž€‚É‚Ü‚µ‚½");*/
         }
     }
 

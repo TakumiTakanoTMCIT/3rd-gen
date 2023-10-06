@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 118029541}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1894,6 +1894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageGround
       objectReference: {fileID: 0}
+    - target: {fileID: 4102913850835416001, guid: ad2d007ac9a14664a86fc336bfbfdfbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2d007ac9a14664a86fc336bfbfdfbc, type: 3}
 --- !u!1 &519420028
@@ -3308,6 +3312,7 @@ GameObject:
   - component: {fileID: 1082710793}
   - component: {fileID: 1082710794}
   - component: {fileID: 1082710795}
+  - component: {fileID: 1082710796}
   m_Layer: 0
   m_Name: Up
   m_TagString: EUp
@@ -3340,7 +3345,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0061757565, y: 0.72877574}
@@ -3377,6 +3382,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1082710796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082710792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda684b39f4e17a429eba2139a0930eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  con: {fileID: 118029538}
 --- !u!1001 &1102197336
 PrefabInstance:
   m_ObjectHideFlags: 0

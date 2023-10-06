@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Up : MonoBehaviour
 {
+    public PlayerCon con;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +15,16 @@ public class Up : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        //Debug.Log("UPÇ™Ç»Ç…Ç©Ç…êGÇÍÇΩ");
+
+        if (col.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("ìGÇ…êGÇÍÇ‹ÇµÇΩÅBéÄñSÇµÇ‹Ç∑");
+            con.Death();
+        }
     }
 }
