@@ -74,5 +74,53 @@ public class MoveScene : MonoBehaviour
 
             SceneManager.LoadScene("OpeningScene");
         }
+        else if(Nscene == "Stage3")
+        {
+            GlobalVariables.clear3 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage4")
+        {
+            GlobalVariables.clear4 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage5")
+        {
+            GlobalVariables.clear5 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage6")
+        {
+            GlobalVariables.clear6 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage7")
+        {
+            GlobalVariables.clear7 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage8")
+        {
+            GlobalVariables.clear8 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage9")
+        {
+            GlobalVariables.clear9 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
+        else if(Nscene == "Stage10")
+        {
+            GlobalVariables.clear10 = true;
+
+            SceneManager.LoadScene("OpeningScene");
+        }
     }
 }

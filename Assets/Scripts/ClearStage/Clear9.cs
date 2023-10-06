@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Clear1 : MonoBehaviour
+public class Clear9 : MonoBehaviour
 {
     bool clear;
 
@@ -11,7 +11,7 @@ public class Clear1 : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        clear = GlobalVariables.clear1;
+        clear = GlobalVariables.clear9;
         WakeUp();
     }
     void WakeUp()
@@ -19,14 +19,7 @@ public class Clear1 : MonoBehaviour
         if (clear == true)
         {
             gameObject.SetActive(true);
-            GlobalVariables.clear1 = clear;
+            GlobalVariables.clear9 = clear;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }
