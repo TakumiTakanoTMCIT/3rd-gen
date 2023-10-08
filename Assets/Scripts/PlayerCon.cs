@@ -22,6 +22,8 @@ public class PlayerCon : MonoBehaviour
 
     GameObject Lefter , Righter;
 
+    public CoinCon coinCon;
+
     // Start is called before the first frame update
     void Start()
     {

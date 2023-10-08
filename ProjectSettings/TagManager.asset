@@ -19,6 +19,7 @@ TagManager:
   - EDown
   - ELeft
   - ERight
+  - Coin
   layers:
   - Default
   - TransparentFX

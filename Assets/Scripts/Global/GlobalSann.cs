@@ -23,5 +23,6 @@ public static class GlobalVariables
     public static string NowScene;
     public static string NowPuzulScene;
     public static bool clear1, clear2, clear3, clear4, clear5, clear6, clear7,clear8,clear9,clear10;
+    public static int Coins;
     //public static bool alreadyclear1,alreadyclear2;
 }
