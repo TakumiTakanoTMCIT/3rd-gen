@@ -41,9 +41,10 @@ public class PlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {      //velocityから移動速度を取得して移動速度がMaxSpeed以下の場合だけ移動キーが効くようにしました。
-        
+        //Debug.Log("PlayerConのUpdateは機能しています");
             if (Input.GetKey(KeyCode.A))
             {
+            //Debug.Log("Aキーが押されました");
                 if (veloX >= -MaxSpeed)
                 {
                     sp.flipX = true;
@@ -60,6 +61,7 @@ public class PlayerCon : MonoBehaviour
 
             if (Input.GetKey(KeyCode.D))
             {
+            
                 if (veloX <= MaxSpeed)
                 {
                 sp.flipX = false;

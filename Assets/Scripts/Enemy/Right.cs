@@ -27,7 +27,7 @@ public class Right : MonoBehaviour
 
         if (col.gameObject.CompareTag("Object"))
         {
-            Debug.Log("RightÇ…êGÇÍÇ‹ÇµÇΩ");
+            //Debug.Log("RightÇ…êGÇÍÇ‹ÇµÇΩ");
             Econ.OnRight();
         }
     }
