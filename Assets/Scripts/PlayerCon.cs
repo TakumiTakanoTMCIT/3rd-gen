@@ -44,6 +44,7 @@ public class PlayerCon : MonoBehaviour
             {
                 if (veloX >= -MaxSpeed)
                 {
+                    sp.flipX = true;
                     rb.AddForce(-speed);
                 }
 
@@ -59,8 +60,8 @@ public class PlayerCon : MonoBehaviour
             {
                 if (veloX <= MaxSpeed)
                 {
-
-                      rb.AddForce(speed);
+                sp.flipX = false;
+                rb.AddForce(speed);
 
                       /*sp.flipX = false;
 
@@ -102,6 +103,12 @@ public class PlayerCon : MonoBehaviour
             /*Death();
             Debug.Log("Ž€‚É‚Ü‚µ‚½");*/
         }
+
+        if (collision.gameObject.CompareTag("DamageGround"))
+        {
+            Debug.Log("ƒ_ƒ[ƒW°‚ÉG‚ê‚Ü‚µ‚½");
+            Death();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -110,12 +117,6 @@ public class PlayerCon : MonoBehaviour
         {
             Debug.Log("ƒS[ƒ‹‚µ‚Ü‚µ‚½");
             MoveScene.instance.CleardGame();
-        }
-
-        if(col.gameObject.CompareTag("DamageGround"))
-        {
-            Debug.Log("ƒ_ƒ[ƒW°‚ÉG‚ê‚Ü‚µ‚½");
-            Death();
         }
 
         /*if(col.gameObject.CompareTag("ELeft"))//            “G‚ÉG‚ê‚½‚ç....
