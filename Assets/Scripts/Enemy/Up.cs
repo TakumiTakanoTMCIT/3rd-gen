@@ -18,11 +18,6 @@ public class Up : MonoBehaviour
         }
     }
 
-    void Death()
-    {
-        //Destroy(this.gameObject);
-    }
-
     // Start is called before the first frame update
     void Start()
     {

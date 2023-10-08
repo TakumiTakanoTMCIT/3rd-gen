@@ -19,25 +19,17 @@ public class Left : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if (col.gameObject.CompareTag("Player"))
-        {
-
-        }
-
-        if(col.gameObject.CompareTag("Object"))
-        {
-            Debug.Log("LeftÇ…êGÇÍÇ‹ÇµÇΩ");
-            Econ.OnLeft();
-        }
-    }
-
     public void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             con.Death();
+        }
+
+        if (col.gameObject.CompareTag("Object"))
+        {
+            Debug.Log("LeftÇ…êGÇÍÇ‹ÇµÇΩ");
+            Econ.OnLeft();
         }
     }
 }

@@ -18,20 +18,17 @@ public class Right : MonoBehaviour
         
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
-    {
-        if(col.gameObject.CompareTag("Object"))
-        {
-            Debug.Log("RightÇ…êGÇÍÇ‹ÇµÇΩ");
-            Econ.OnRight();
-        }
-    }
-
     public void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
             con.Death();
+        }
+
+        if (col.gameObject.CompareTag("Object"))
+        {
+            Debug.Log("RightÇ…êGÇÍÇ‹ÇµÇΩ");
+            Econ.OnRight();
         }
     }
 }

@@ -11,6 +11,7 @@ public class PlayerCon : MonoBehaviour
     float jumpLvl;      // Set Jump level
 
     public float MaxSpeed = 3f;
+    Vector3 speed;//addforcecに直したためVector3でスピードを設定しました
 
     SpriteRenderer sp;
     Rigidbody2D rb;
@@ -31,6 +32,8 @@ public class PlayerCon : MonoBehaviour
 
         Player = GameObject.Find("Player");
         TF = Player.transform;
+
+        speed = new Vector3(movingSpeed, 0, 0);
     }
 
     // Update is called once per frame
@@ -41,12 +44,14 @@ public class PlayerCon : MonoBehaviour
             {
                 if (veloX >= -MaxSpeed)
                 {
-                    TF.position += new Vector3(-movingSpeed, 0 , 0);
-
-                    sp.flipX = true;
+                    rb.AddForce(-speed);
                 }
-                
-                
+
+                /*TF.position += new Vector3(-movingSpeed, 0 , 0);
+
+                sp.flipX = true;*/
+
+
                 //rb.AddForce(Vector2.left * movingSpeed, ForceMode2D.Force); // 力を加える
             }
 
@@ -55,25 +60,33 @@ public class PlayerCon : MonoBehaviour
                 if (veloX <= MaxSpeed)
                 {
 
-                sp.flipX = false;
+                      rb.AddForce(speed);
 
-                TF.position += new Vector3(movingSpeed, 0, 0);
+                      /*sp.flipX = false;
 
-                //rb.AddForce(Vector2.right * movingSpeed, ForceMode2D.Force); // 力を加える
+                      TF.position += new Vector3(movingSpeed, 0, 0);*/
+
+                      //rb.AddForce(Vector2.right * movingSpeed, ForceMode2D.Force); // 力を加える
                 }
             }
 
-        //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
+            //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
 
 
-        veloX = rb.velocity.x;      //velocityのX座標を取得。これをすることにより、スピードを取得できる
+            veloX = rb.velocity.x;      //velocityのX座標を取得。これをすることにより、スピードを取得できる
 
-        //↑なんでveloXの宣言をUpdateの中で行うのかというと、常時この変数を更新したいから
+            //↑なんでveloXの宣言をUpdateの中で行うのかというと、常時この変数を更新したいから
 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump(rb, jumpLvl);
+        }
+
+        if(TF.position.y <= -13)
+        {
+            Debug.Log("奈落に落ちました");
+            Death();
         }
     }
 
