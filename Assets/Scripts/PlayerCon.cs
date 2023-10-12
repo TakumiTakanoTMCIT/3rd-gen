@@ -47,7 +47,7 @@ public class PlayerCon : MonoBehaviour
             //Debug.Log("AƒL[‚ª‰Ÿ‚³‚ê‚Ü‚µ‚½");
                 if (veloX >= -MaxSpeed)
                 {
-                    sp.flipX = true;
+                    sp.flipX = false;
                     rb.AddForce(-speed);
                 }
 
@@ -64,7 +64,7 @@ public class PlayerCon : MonoBehaviour
             
                 if (veloX <= MaxSpeed)
                 {
-                sp.flipX = false;
+                sp.flipX = true;
                 rb.AddForce(speed);
 
                       /*sp.flipX = false;
