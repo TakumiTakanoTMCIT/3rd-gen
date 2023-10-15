@@ -24,6 +24,8 @@ public class PlayerCon : MonoBehaviour
 
     public CoinCon coinCon;
 
+    private Animator anim = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,8 @@ public class PlayerCon : MonoBehaviour
         TF = Player.transform;
 
         speed = new Vector3(movingSpeed, 0, 0);
+
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -49,30 +53,27 @@ public class PlayerCon : MonoBehaviour
                 {
                     sp.flipX = false;
                     rb.AddForce(-speed);
+                Debug.Log("左に力が加わっています");
+                anim.SetBool("run", true);
                 }
-
-                /*TF.position += new Vector3(-movingSpeed, 0 , 0);
-
-                sp.flipX = true;*/
-
-
-                //rb.AddForce(Vector2.left * movingSpeed, ForceMode2D.Force); // 力を加える
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-            
                 if (veloX <= MaxSpeed)
                 {
                 sp.flipX = true;
                 rb.AddForce(speed);
 
-                      /*sp.flipX = false;
-
-                      TF.position += new Vector3(movingSpeed, 0, 0);*/
-
-                      //rb.AddForce(Vector2.right * movingSpeed, ForceMode2D.Force); // 力を加える
+                Debug.Log("右に力が加わっています");
+                anim.SetBool("run", true);
                 }
+            }
+
+            if(veloX < 2 && veloX > -2)
+            {
+                anim.SetBool("run", false);
+                Debug.Log("力がほとんど加わっていない");
             }
 
             //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）

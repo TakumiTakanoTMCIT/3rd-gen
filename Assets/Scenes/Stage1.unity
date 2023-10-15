@@ -1147,7 +1147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &359672536
 Transform:
   m_ObjectHideFlags: 0
@@ -1637,121 +1637,7 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 359672539}
-    m_ColliderPaths:
-    - - X: 300000000
-        Y: 160000000
-      - X: 290000000
-        Y: 160000000
-      - X: 290000000
-        Y: 150000000
-      - X: 300000000
-        Y: 150000000
-    - - X: 310000000
-        Y: 100000000
-      - X: 280000000
-        Y: 100000000
-      - X: 280000000
-        Y: 90000000
-      - X: 310000000
-        Y: 90000000
-    - - X: 360000000
-        Y: 70000000
-      - X: 330000000
-        Y: 70000000
-      - X: 330000000
-        Y: 60000000
-      - X: 360000000
-        Y: 60000000
-    - - X: 420000000
-        Y: 20000000
-      - X: 390000000
-        Y: 20000000
-      - X: 390000000
-        Y: 10000000
-      - X: 420000000
-        Y: 10000000
-    - - X: 60000000
-        Y: -30000000
-      - X: 50000000
-        Y: -30000000
-      - X: 50000000
-        Y: -20000000
-      - X: 40000000
-        Y: -20000000
-      - X: 40000000
-        Y: -10000000
-      - X: 30000000
-        Y: -10000000
-      - X: 30000000
-        Y: -20000000
-      - X: 20000000
-        Y: -20000000
-      - X: 20000000
-        Y: -30000000
-      - X: 10000000
-        Y: -30000000
-      - X: 10000000
-        Y: -40000000
-      - X: 60000000
-        Y: -40000000
-    - - X: 350000000
-        Y: -10000000
-      - X: 320000000
-        Y: -10000000
-      - X: 320000000
-        Y: -20000000
-      - X: 350000000
-        Y: -20000000
-    - - X: 0
-        Y: -30000000
-      - X: -10000000
-        Y: -30000000
-      - X: -10000000
-        Y: -20000000
-      - X: -20000000
-        Y: -20000000
-      - X: -20000000
-        Y: -30000000
-      - X: -30000000
-        Y: -30000000
-      - X: -30000000
-        Y: -40000000
-      - X: 0
-        Y: -40000000
-    - - X: 190000000
-        Y: -30000000
-      - X: 180000000
-        Y: -30000000
-      - X: 180000000
-        Y: -20000000
-      - X: 170000000
-        Y: -20000000
-      - X: 170000000
-        Y: -40000000
-      - X: 190000000
-        Y: -40000000
-    - - X: 130000000
-        Y: -20000000
-      - X: 120000000
-        Y: -20000000
-      - X: 120000000
-        Y: -30000000
-      - X: 110000000
-        Y: -30000000
-      - X: 110000000
-        Y: -40000000
-      - X: 130000000
-        Y: -40000000
-    - - X: 290000000
-        Y: -30000000
-      - X: 280000000
-        Y: -30000000
-      - X: 280000000
-        Y: -40000000
-      - X: 290000000
-        Y: -40000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 29.999971, y: 15}
@@ -1820,7 +1706,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359672535}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -4810,7 +4696,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &987754642
 Transform:
   m_ObjectHideFlags: 0
@@ -8225,9 +8111,9 @@ GameObject:
   - component: {fileID: 1833340421}
   - component: {fileID: 1833340420}
   - component: {fileID: 1833340419}
+  - component: {fileID: 1833340422}
   - component: {fileID: 1833340424}
   - component: {fileID: 1833340423}
-  - component: {fileID: 1833340422}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8334,9 +8220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a631821fad1191b41b3304ce3d2cc03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingSpeed: 5
+  movingSpeed: 9
   jumpLvl: 10
-  MaxSpeed: 7
+  MaxSpeed: 10
   coinCon: {fileID: 1001452076}
 --- !u!61 &1833340423
 BoxCollider2D:
@@ -8378,12 +8264,12 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 1
+  m_AngularDrag: 0
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &1837582285
 GameObject:
@@ -11192,7 +11078,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1911253121}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
