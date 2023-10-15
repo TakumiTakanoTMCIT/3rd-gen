@@ -81,7 +81,7 @@ public class PlayerCon : MonoBehaviour
             if(veloY < -1)
             {
                 anim.SetBool("isFall", true);
-                Debug.Log("isFallをtrueにしました");
+                //Debug.Log("isFallをtrueにしました");
             }
 
         //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
@@ -112,7 +112,7 @@ public class PlayerCon : MonoBehaviour
         {
             anim.SetBool("isJump", false);
             anim.SetBool("isFall", false);
-            Debug.Log("地面に付きました");
+            //Debug.Log("地面に付きました");
             veloY = 0;
             velo.y = veloY;
         }
@@ -126,7 +126,7 @@ public class PlayerCon : MonoBehaviour
 
             anim.SetBool("isJump", false);
             anim.SetBool("isFall", false);
-            Debug.Log("地面に付きました");
+            //Debug.Log("地面に付きました");
         }
 
         if(collision.gameObject.CompareTag("Enemy"))

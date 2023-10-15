@@ -6,6 +6,7 @@ public class Up : MonoBehaviour
 {
     public PlayerCon con;
     public EnemyCon Econ;
+    public EnemyImage enemyImage;
     
     public void OnCollisionEnter2D(Collision2D col)
     {
@@ -15,6 +16,9 @@ public class Up : MonoBehaviour
         {
             Debug.Log("Player‚É“¥‚Ü‚ê‚Ü‚µ‚½Ž€–S‚µ‚Ü‚·");
             Econ.Death();
+
+            GameObject enemymanager = GameObject.Find("EnemyDeathUIManager");
+            enemymanager.GetComponent<EnemyImage>().Imaging();
         }
     }
 
