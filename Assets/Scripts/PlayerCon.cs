@@ -18,13 +18,15 @@ public class PlayerCon : MonoBehaviour
     GameObject Player;
     Transform TF;
     bool isJumping;
-    float veloX;
+    float veloX , veloY;
 
     GameObject Lefter , Righter;
 
     public CoinCon coinCon;
 
     private Animator anim = null;
+
+    Vector2 velo;
 
     // Start is called before the first frame update
     void Start()
@@ -53,7 +55,7 @@ public class PlayerCon : MonoBehaviour
                 {
                     sp.flipX = false;
                     rb.AddForce(-speed);
-                Debug.Log("左に力が加わっています");
+                //Debug.Log("左に力が加わっています");
                 anim.SetBool("run", true);
                 }
             }
@@ -65,7 +67,7 @@ public class PlayerCon : MonoBehaviour
                 sp.flipX = true;
                 rb.AddForce(speed);
 
-                Debug.Log("右に力が加わっています");
+                //Debug.Log("右に力が加わっています");
                 anim.SetBool("run", true);
                 }
             }
@@ -73,20 +75,29 @@ public class PlayerCon : MonoBehaviour
             if(veloX < 2 && veloX > -2)
             {
                 anim.SetBool("run", false);
-                Debug.Log("力がほとんど加わっていない");
+                //Debug.Log("力がほとんど加わっていない");
             }
 
-            //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
+            if(veloY < -1)
+            {
+                anim.SetBool("isFall", true);
+                Debug.Log("isFallをtrueにしました");
+            }
+
+        //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
 
 
-            veloX = rb.velocity.x;      //velocityのX座標を取得。これをすることにより、スピードを取得できる
+        velo = rb.velocity;
+        veloX = velo.x;      //velocityのX座標を取得。これをすることにより、スピードを取得できる
+        veloY = velo.y;
 
-            //↑なんでveloXの宣言をUpdateの中で行うのかというと、常時この変数を更新したいから
+        //↑なんでveloXの宣言をUpdateの中で行うのかというと、常時この変数を更新したいから
 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump(rb, jumpLvl);
+            anim.SetBool("isJump", true);
         }
 
         if(TF.position.y <= -13)
@@ -95,12 +106,27 @@ public class PlayerCon : MonoBehaviour
             Death();
         }
     }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grounds") || collision.gameObject.CompareTag("Object"))
+        {
+            anim.SetBool("isJump", false);
+            anim.SetBool("isFall", false);
+            Debug.Log("地面に付きました");
+            veloY = 0;
+            velo.y = veloY;
+        }
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Grounds") || collision.gameObject.CompareTag("Object"))
         {
             isJumping = false;
+
+            anim.SetBool("isJump", false);
+            anim.SetBool("isFall", false);
+            Debug.Log("地面に付きました");
         }
 
         if(collision.gameObject.CompareTag("Enemy"))

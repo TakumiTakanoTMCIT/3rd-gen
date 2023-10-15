@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8d53f06368c72c545ac4df54b6e03a51
+guid: 7c2fff0a4a00e19488eea0b4208271f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 30
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Death
+      name: oJxzRbe5ZsZsASd1697342636_1697342642_0
       rect:
         serializedVersion: 2
-        x: 77
-        y: 410
-        width: 902
-        height: 1267
+        x: 65
+        y: 76
+        width: 248
+        height: 400
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33278c48f33f95443b60b648708dc9d6
-      internalID: -434055176
+      spriteID: 23fd82ed4b9e5f54f802e60a4fe2348d
+      internalID: -79750687
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Fall
+      name: oJxzRbe5ZsZsASd1697342636_1697342642_1
       rect:
         serializedVersion: 2
-        x: 1258
-        y: 263
-        width: 866
-        height: 1462
+        x: 391
+        y: 73
+        width: 252
+        height: 422
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50fd0af6b8d6c8d48b633cf2b767544c
-      internalID: -1262306743
+      spriteID: 74f8898cd6b5fc549a16e0fde5929a84
+      internalID: -541523275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump
+      name: oJxzRbe5ZsZsASd1697342636_1697342642_2
       rect:
         serializedVersion: 2
-        x: 2409
-        y: 272
-        width: 851
-        height: 1385
+        x: 717
+        y: 115
+        width: 263
+        height: 367
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,8 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60e76722b1d77484f8fa7e4fb3c2a96a
-      internalID: 1942767613
+      spriteID: 060efde380706434bac25b6be04e23d5
+      internalID: -1483380855
       vertices: []
       indices: 
       edges: []
@@ -178,9 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Fall: -1262306743
-      Jump: 1942767613
-      Death: -434055176
+      oJxzRbe5ZsZsASd1697342636_1697342642_1: -541523275
+      oJxzRbe5ZsZsASd1697342636_1697342642_2: -1483380855
+      oJxzRbe5ZsZsASd1697342636_1697342642_0: -79750687
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
