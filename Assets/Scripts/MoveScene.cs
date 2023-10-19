@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // コレ重要
+using UnityEngine.SceneManagement; // ?R???d?v
 
 public class MoveScene : MonoBehaviour
 {
     private string Nscene , Pscene;
 
-　　public static MoveScene instance;
+    public static MoveScene instance;
 
     //public GameObject clear1;
 
@@ -43,16 +43,16 @@ public class MoveScene : MonoBehaviour
 
     public void SaveNowScene()
     {
-        GlobalVariables.NowScene = SceneManager.GetActiveScene().name;      //今のアクションシーンをグローバルに保存
+        GlobalVariables.NowScene = SceneManager.GetActiveScene().name;      //?????A?N?V?????V?[?????O???[?o????????
 
         Nscene = GlobalVariables.NowScene;
 
-        Debug.Log("今シーンがグローバルにセーブされ、そのシーンの名前は：" +Nscene+"←Nscene  " + GlobalVariables.NowScene + "←グローバルでの保存");
+        Debug.Log("???V?[?????O???[?o?????Z?[?u?????A?????V?[???????O???F" +Nscene+"??Nscene  " + GlobalVariables.NowScene + "???O???[?o??????????");
     }
 
     public void SavePuzulScene()
     {
-        GlobalVariables.NowPuzulScene = SceneManager.GetActiveScene().name;      //今のパズルシーンをグローバルに保存
+        GlobalVariables.NowPuzulScene = SceneManager.GetActiveScene().name;      //?????p?Y???V?[?????O???[?o????????
     }
 
     public void CleardGame()
