@@ -17,7 +17,7 @@ public class PlayerCon : MonoBehaviour
     Rigidbody2D rb;
     GameObject Player;
     Transform TF;
-    bool isJumping;
+    public bool nowjump;
     float veloX , veloY;
 
     GameObject Lefter , Righter;
@@ -32,7 +32,6 @@ public class PlayerCon : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();                          // rigidbody2Dを取得
-        isJumping = false;
 
         sp = this.GetComponent<SpriteRenderer>();
 
@@ -46,7 +45,10 @@ public class PlayerCon : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {      //velocityから移動速度を取得して移動速度がMaxSpeed以下の場合だけ移動キーが効くようにしました。
+    {
+        //Debug.Log(isJumping);
+        
+        //velocityから移動速度を取得して移動速度がMaxSpeed以下の場合だけ移動キーが効くようにしました。
         //Debug.Log("PlayerConのUpdateは機能しています");
             if (Input.GetKey(KeyCode.A))
             {
@@ -78,10 +80,16 @@ public class PlayerCon : MonoBehaviour
                 //Debug.Log("力がほとんど加わっていない");
             }
 
-            if(veloY < -1)
+            if(veloY < -1)      //just falling now
             {
                 anim.SetBool("isFall", true);
+                nowjump = true;
                 //Debug.Log("isFallをtrueにしました");
+            }
+
+            if(veloY > 0.1) // just jumping now
+            {
+                nowjump = true;
             }
 
         //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
@@ -96,7 +104,7 @@ public class PlayerCon : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump(rb, jumpLvl);
+            Jump(rb, jumpLvl);//ジャンプさせる
             anim.SetBool("isJump", true);
         }
 
@@ -120,7 +128,7 @@ public class PlayerCon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Grounds") || collision.gameObject.CompareTag("Object"))
+        /*if (collision.gameObject.CompareTag("Grounds") || collision.gameObject.CompareTag("Object"))
         {
             isJumping = false;
 
@@ -132,8 +140,8 @@ public class PlayerCon : MonoBehaviour
         if(collision.gameObject.CompareTag("Enemy"))
         {
             /*Death();
-            Debug.Log("死にました");*/
-        }
+            Debug.Log("死にました");
+        }*/
 
         if (collision.gameObject.CompareTag("DamageGround"))
         {
@@ -165,19 +173,28 @@ public class PlayerCon : MonoBehaviour
 
     void Jump(Rigidbody2D rb, float lvl)
     {
-        if (!isJumping)
+        if(nowjump == false)
         {
+            nowjump = true;
+
             rb.velocity = new Vector2(rb.velocity.x, 0f);                   // Init Y velocity
             rb.AddForce(Vector2.up * lvl, ForceMode2D.Impulse);             // Add Up force
-            isJumping = true;
         }
     }
 
     public void Death()
     {
         // 現在のSceneを取得
-        Scene loadScene = SceneManager.GetActiveScene();
+        //Scene loadScene = SceneManager.GetActiveScene();
         // 現在のシーンを再読み込みする
-        SceneManager.LoadScene(loadScene.name);
+        SceneManager.LoadScene(GlobalVariables.NowScene);
+    }
+
+    public void OnGround()
+    {
+        nowjump = false;
+        anim.SetBool("isJump", false);
+        anim.SetBool("isFall", false);
+        //Debug.Log("地面に付きました");
     }
 }
