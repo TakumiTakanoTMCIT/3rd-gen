@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a357f7fdfb988246879915baa6a9b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.008
+  speed: 0.8
   powerX: 1
 --- !u!61 &2114141474537916427
 BoxCollider2D:
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   con: {fileID: 0}
   Econ: {fileID: 2114141474537916426}
+  enemyImage: {fileID: 0}
 --- !u!1 &2114141475345292175
 GameObject:
   m_ObjectHideFlags: 0

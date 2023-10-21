@@ -21,7 +21,7 @@ public class EnemyCon : MonoBehaviour
         // ワールド座標を基準に、座標を取得
         Vector3 worldPos = myTransform.position;
 
-        worldPos.x += speed*powerX;    // ワールド座標を基準にした、x座標を1に変更
+        worldPos.x += speed*powerX*Time.deltaTime;    // ワールド座標を基準にした、x座標を1に変更
 
         myTransform.position = worldPos;  // ワールド座標での座標を設定
     }

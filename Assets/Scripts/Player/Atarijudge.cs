@@ -30,7 +30,7 @@ public class Atarijudge : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col)
     {
         //Debug.Log("エンター");
-        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object"))
+        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object") || col.gameObject.CompareTag("Enemy"))
         {
             isGround = true;
             
@@ -40,7 +40,7 @@ public class Atarijudge : MonoBehaviour
     private void OnTriggerStay2D(Collider2D col)
     {
         //Debug.Log("ステイ");
-        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object"))
+        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object") || col.gameObject.CompareTag("Enemy"))
         {
             isGround = true;
             
@@ -50,7 +50,7 @@ public class Atarijudge : MonoBehaviour
     private void OnTriggerExit2D(Collider2D col)
     {
         //Debug.Log("イグジット");
-        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object"))
+        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object") || col.gameObject.CompareTag("Enemy"))
         {
             isGround = false;
             
