@@ -10,9 +10,9 @@ public class Up : MonoBehaviour
     
     public void OnCollisionEnter2D(Collision2D col)
     {
-        //Debug.Log("UPÇ™Ç»Ç…Ç©Ç…êGÇÍÇΩ");
+        Debug.Log("UPÇ™Ç»Ç…Ç©Ç…êGÇÍÇΩ");
 
-        if (col.gameObject.CompareTag("Player"))
+        if (col.gameObject.CompareTag("ATARI"))// under of player
         {
             Debug.Log("PlayerÇ…ì•Ç‹ÇÍÇ‹ÇµÇΩéÄñSÇµÇ‹Ç∑");
             Econ.Death();
@@ -22,6 +22,18 @@ public class Up : MonoBehaviour
         }
     }
 
+    /*public void OnCollisionStay2D(Collision2D col)
+    {
+        Debug.Log("UPÇ™Ç»Ç…Ç©Ç…êGÇÍÇΩ");
+        if (col.gameObject.CompareTag("Atari"))// under of player
+        {
+            Debug.Log("PlayerÇ…ì•Ç‹ÇÍÇ‹ÇµÇΩéÄñSÇµÇ‹Ç∑");
+            Econ.Death();
+
+            GameObject enemymanager = GameObject.Find("EnemyDeathUIManager");
+            enemymanager.GetComponent<EnemyImage>().Imaging();
+        }
+    }*/
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +44,15 @@ public class Up : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void OnDead()
+    {
+        Debug.Log("PlayerÇ…ì•Ç‹ÇÍÇ‹ÇµÇΩéÄñSÇµÇ‹Ç∑");
+        Econ.Death();
+
+        GameObject enemymanager = GameObject.Find("EnemyDeathUIManager");
+        enemymanager.GetComponent<EnemyImage>().Imaging();
     }
 
 }

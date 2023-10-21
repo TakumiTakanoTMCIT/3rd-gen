@@ -25,8 +25,12 @@ public class DebugerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        veloy.text = "PlayerVeloY: " + rb.velocity.y + "\n" + "PlayerVeloX: " + rb.velocity.x 
-            + "\n" + "PlayerTransformY: " + TF.position.y + "\n" + "PlayerTransformX: " + TF.position.x
-            + "\n" + "isJumping: " + pcon.nowjump;
+        veloy.text = 
+            "PlayerVeloY: " + rb.velocity.y 
+            + "\n" + "PlayerVeloX: " + rb.velocity.x 
+            + "\n" + "PlayerTransformY: " + TF.position.y 
+            + "\n" + "PlayerTransformX: " + TF.position.x
+            + "\n" + "isJumping: " + pcon.nowjump
+            + "\n" + "What On FOOT: " + pcon.globalcol;
     }
 }

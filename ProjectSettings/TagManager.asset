@@ -20,6 +20,8 @@ TagManager:
   - ELeft
   - ERight
   - Coin
+  - Atari
+  - ATARI
   layers:
   - Default
   - TransparentFX

@@ -28,6 +28,10 @@ public class PlayerCon : MonoBehaviour
 
     Vector2 velo;
 
+    public string globalcol;
+
+    Up Eupcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -190,11 +194,36 @@ public class PlayerCon : MonoBehaviour
         SceneManager.LoadScene(GlobalVariables.NowScene);
     }
 
-    public void OnGround()
+    public void OnGround(Collider2D col)
     {
+        globalcol = col.gameObject.tag;
+
         nowjump = false;
         anim.SetBool("isJump", false);
         anim.SetBool("isFall", false);
-        //Debug.Log("’n–Ê‚É•t‚«‚Ü‚µ‚½");
+        //Debug.Log("foot on somehting");
+
+        if (col.gameObject.CompareTag("Grounds") || col.gameObject.CompareTag("Object"))
+        {
+            //Debug.Log("Ground");
+            //want to do above code
+        }
+        else if(col.gameObject.CompareTag("EUp"))
+        {
+            //GameObject obj = transform.parent.col.gameObject;
+            //Eupcon = col.GameObejct.Find
+            //Eupcon.OnDead();
+            //col.gameObejct.OnDead();
+
+            //Debug.Log("Enemy");
+            if (nowjump == false)
+            {
+                /*nowjump = true;
+                rb.velocity = new Vector2(rb.velocity.x, 0f);                   // Init Y velocity
+                rb.AddForce(Vector2.up * jumpLvl * 0.5f, ForceMode2D.Impulse);             // Add Up force
+                */
+
+            }
+        }
     }
 }

@@ -4234,7 +4234,7 @@ GameObject:
   - component: {fileID: 753371868}
   m_Layer: 0
   m_Name: Atari
-  m_TagString: Untagged
+  m_TagString: ATARI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4280,7 +4280,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.22207022, y: -0.6717067}
+  m_Offset: {x: 0.15551925, y: -0.24849492}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4291,7 +4291,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.158863, y: 1.0793226}
+  m_Size: {x: 3.3636832, y: 0.23289907}
   m_EdgeRadius: 0
 --- !u!1001 &756041959
 PrefabInstance:
@@ -8975,7 +8975,7 @@ Transform:
   m_GameObject: {fileID: 1833340418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.16, y: -3.85, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 753371867}
@@ -8999,6 +8999,7 @@ MonoBehaviour:
   MaxSpeed: 10
   nowjump: 0
   coinCon: {fileID: 1001452076}
+  globalcol: 
 --- !u!61 &1833340423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12957,10 +12958,6 @@ PrefabInstance:
     - target: {fileID: 7194014455935079303, guid: afd29335a20c082419028f3b170a2f51, type: 3}
       propertyPath: m_Name
       value: enemy_IYOU
-      objectReference: {fileID: 0}
-    - target: {fileID: 7194014455935079353, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: m_Constraints
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7194014455935079356, guid: afd29335a20c082419028f3b170a2f51, type: 3}
       propertyPath: m_RootOrder
