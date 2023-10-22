@@ -27,28 +27,19 @@ public class Atarijudge : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.gameObject.tag == "EUp")
-        {
-            Debug.Log("エンター");
-            pcon.OnGround(col);
-        }
+        Debug.Log("エンター");
+        pcon.OnGround(col);
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (col.gameObject.tag == "EUp")
-        {
-            Debug.Log("ステイ");
-            pcon.OnGround(col);
-        }
+        Debug.Log("ステイ");
+        pcon.OnGround(col);
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.tag == "EUp")
-        {
-            Debug.Log("イグジット");
-            pcon.OnGround(col);
-        }
+        Debug.Log("イグジット");
+        pcon.OnGround(col);
     }
 }

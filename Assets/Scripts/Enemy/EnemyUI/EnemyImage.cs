@@ -27,7 +27,7 @@ public class EnemyImage : MonoBehaviour
 
     public void Imaging()
     {
-        Debug.Log("Imagingが発動！！");
+        //Debug.Log("Imagingが発動！！");
         Vector3 playerpos = GameObject.Find("Player").transform.position;
 
         playerpos.y += -2;

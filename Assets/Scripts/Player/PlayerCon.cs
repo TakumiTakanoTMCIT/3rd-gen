@@ -198,7 +198,8 @@ public class PlayerCon : MonoBehaviour
 
     public void OnGround(Collider2D col)
     {
-        globalcol = col.gameObject.tag;
+        Debug.Log(globalcol);
+        globalcol = col.gameObject.name;
 
         nowjump = false;
         anim.SetBool("isJump", false);
@@ -218,7 +219,7 @@ public class PlayerCon : MonoBehaviour
 
             econ.Death();//do KANSUU(death()) 
 
-            Debug.Log(parenter + "  " + col.gameObject);
+            //Debug.Log(parenter + "  " + col.gameObject);
 
             nowjump = true;
 

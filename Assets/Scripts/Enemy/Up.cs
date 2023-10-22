@@ -9,7 +9,7 @@ public class Up : MonoBehaviour
     
     public void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("UP‚ª‚È‚É‚©‚ÉG‚ê‚½");
+        //Debug.Log("UP‚ª‚È‚É‚©‚ÉG‚ê‚½");
 
         if (col.gameObject.name == "Atari")// under of player
         {
