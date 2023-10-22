@@ -34,6 +34,8 @@ public class PlayerCon : MonoBehaviour
 
     public EnemyCon econ;
 
+    public GoalCon gcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -158,10 +160,16 @@ public class PlayerCon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Goal"))
+        int goal = 0;
+
+        if(goal == 0)
         {
-            Debug.Log("ÉSÅ[ÉãÇµÇ‹ÇµÇΩ");
-            MoveScene.instance.CleardGame();
+            if (col.gameObject.CompareTag("Goal"))
+            {
+                Debug.Log("ÉSÅ[ÉãÇµÇ‹ÇµÇΩ");
+                gcon.Goal();
+            }
+            goal = 1;
         }
 
         /*if(col.gameObject.CompareTag("ELeft"))//            ìGÇ…êGÇÍÇΩÇÁ....
@@ -198,7 +206,7 @@ public class PlayerCon : MonoBehaviour
 
     public void OnGround(Collider2D col)
     {
-        Debug.Log(globalcol);
+        //Debug.Log(globalcol);
         globalcol = col.gameObject.name;
 
         nowjump = false;

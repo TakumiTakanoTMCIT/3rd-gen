@@ -27,19 +27,19 @@ public class Atarijudge : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("エンター");
+        //Debug.Log("エンター");
         pcon.OnGround(col);
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        Debug.Log("ステイ");
+        //Debug.Log("ステイ");
         pcon.OnGround(col);
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        Debug.Log("イグジット");
+        //Debug.Log("イグジット");
         pcon.OnGround(col);
     }
 }
