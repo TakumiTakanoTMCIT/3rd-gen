@@ -4,21 +4,17 @@ using UnityEngine;
 
 public class Up : MonoBehaviour
 {
-    public PlayerCon con;
+    //public PlayerCon con;
     public EnemyCon Econ;
-    public EnemyImage enemyImage;
     
     public void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log("UPÇ™Ç»Ç…Ç©Ç…êGÇÍÇΩ");
 
-        if (col.gameObject.CompareTag("ATARI"))// under of player
+        if (col.gameObject.name == "Atari")// under of player
         {
             Debug.Log("PlayerÇ…ì•Ç‹ÇÍÇ‹ÇµÇΩéÄñSÇµÇ‹Ç∑");
             Econ.Death();
-
-            GameObject enemymanager = GameObject.Find("EnemyDeathUIManager");
-            enemymanager.GetComponent<EnemyImage>().Imaging();
         }
     }
 

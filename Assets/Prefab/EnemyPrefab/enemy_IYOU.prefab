@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.8
   powerX: 1
+  enemyImage: {fileID: 0}
 --- !u!50 &7194014455935079353
 Rigidbody2D:
   serializedVersion: 4
@@ -339,9 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda684b39f4e17a429eba2139a0930eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  con: {fileID: 0}
   Econ: {fileID: 7194014455935079354}
-  enemyImage: {fileID: 0}
 --- !u!1 &7194014456267079452
 GameObject:
   m_ObjectHideFlags: 0

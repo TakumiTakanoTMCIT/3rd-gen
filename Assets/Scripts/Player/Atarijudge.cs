@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Atarijudge : MonoBehaviour
 {
-    private bool isGround , onEnemy;
+    //private bool isGround , onEnemy;
 
     public GameObject PlayerCon;
     PlayerCon pcon;
@@ -12,8 +12,8 @@ public class Atarijudge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        onEnemy = false;
-        isGround = false;
+        //onEnemy = false;
+        //isGround = false;
         PlayerCon = GameObject.Find("Player");
 
         pcon = PlayerCon.GetComponent<PlayerCon>();
@@ -22,35 +22,33 @@ public class Atarijudge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (isGround)
-        {
-            pcon.OnGround();
-        }
-
-        if(onEnemy)
-        {
-            pcon.OnEnemy();
-        }*/
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        //Debug.Log("エンター");
-            pcon.OnGround(col);
-        /*else if(col.gameObject.CompareTag("Enemy"))
+        if(col.gameObject.tag == "EUp")
         {
-            onEnemy = true;
-        }*/
+            Debug.Log("エンター");
+            pcon.OnGround(col);
+        }
     }
 
     private void OnTriggerStay2D(Collider2D col)
     {
-        //Debug.Log("ステイ");
+        if (col.gameObject.tag == "EUp")
+        {
+            Debug.Log("ステイ");
             pcon.OnGround(col);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        //Debug.Log("イグジット");
+        if (col.gameObject.tag == "EUp")
+        {
+            Debug.Log("イグジット");
+            pcon.OnGround(col);
+        }
     }
 }

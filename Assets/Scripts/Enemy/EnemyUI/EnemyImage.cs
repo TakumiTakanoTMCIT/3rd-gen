@@ -6,12 +6,12 @@ public class EnemyImage : MonoBehaviour
 {
     public GameObject canvas;//ƒLƒƒƒ“ƒoƒX
     public GameObject Image;
-    public GameObject enemy;
+    //public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 enemypos = enemy.transform.position;
+        //Vector3 enemypos = enemy.transform.position;
 
         
 

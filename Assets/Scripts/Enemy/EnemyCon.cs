@@ -8,11 +8,18 @@ public class EnemyCon : MonoBehaviour
 
     public float speed = 1.0f;
     public float powerX = 1.0f;
+
+    public EnemyImage enemyImage;
+
+    GameObject enemymanager;
+
     // Start is called before the first frame update
     void Start()
     {
         // transform‚ðŽæ“¾
         myTransform = this.transform;
+
+        enemymanager = GameObject.Find("EnemyDeathUIManager");
     }
 
     // Update is called once per frame
@@ -39,5 +46,6 @@ public class EnemyCon : MonoBehaviour
     public void Death()
     {
         Destroy(this.gameObject);
+        enemymanager.GetComponent<EnemyImage>().Imaging();
     }
 }

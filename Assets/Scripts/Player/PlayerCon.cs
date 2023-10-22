@@ -32,6 +32,8 @@ public class PlayerCon : MonoBehaviour
 
     Up Eupcon;
 
+    public EnemyCon econ;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -210,20 +212,18 @@ public class PlayerCon : MonoBehaviour
         }
         else if(col.gameObject.CompareTag("EUp"))
         {
-            //GameObject obj = transform.parent.col.gameObject;
-            //Eupcon = col.GameObejct.Find
-            //Eupcon.OnDead();
-            //col.gameObejct.OnDead();
+            GameObject parenter = col.transform.parent.gameObject;//get parent of up
 
-            //Debug.Log("Enemy");
-            if (nowjump == false)
-            {
-                /*nowjump = true;
-                rb.velocity = new Vector2(rb.velocity.x, 0f);                   // Init Y velocity
-                rb.AddForce(Vector2.up * jumpLvl * 0.5f, ForceMode2D.Impulse);             // Add Up force
-                */
+            EnemyCon econ = parenter.GetComponent(typeof(EnemyCon)) as EnemyCon; // get component of enemycon 
 
-            }
+            econ.Death();//do KANSUU(death()) 
+
+            Debug.Log(parenter + "  " + col.gameObject);
+
+            nowjump = true;
+
+            rb.velocity = new Vector2(rb.velocity.x, 0f);                   // Init Y velocity
+            rb.AddForce(Vector2.up * jumpLvl, ForceMode2D.Impulse);             // Add Up force
         }
     }
 }
