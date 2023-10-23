@@ -6,21 +6,21 @@ using UnityEngine.SceneManagement;
 public class PlayerCon : MonoBehaviour
 {
     [SerializeField]
-    float movingSpeed;   // 力を設定
+    float movingSpeed;   // ????????
     [SerializeField]
     float jumpLvl;      // Set Jump level
 
     public float MaxSpeed = 3f;
-    Vector3 speed;//addforcecに直したためVector3でスピードを設定しました
+    Vector3 speed;//addforcec????????????Vector3???X?s?[?h??????????????
 
     SpriteRenderer sp;
     Rigidbody2D rb;
     GameObject Player;
     Transform TF;
     public bool nowjump;
-    float veloX , veloY;
+    float veloX, veloY;
 
-    GameObject Lefter , Righter;
+    GameObject Lefter, Righter;
 
     public CoinCon coinCon;
 
@@ -39,7 +39,7 @@ public class PlayerCon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = this.GetComponent<Rigidbody2D>();                          // rigidbody2Dを取得
+        rb = this.GetComponent<Rigidbody2D>();                          // rigidbody2D??????
 
         sp = this.GetComponent<SpriteRenderer>();
 
@@ -55,70 +55,70 @@ public class PlayerCon : MonoBehaviour
     void Update()
     {
         //Debug.Log(isJumping);
-        
-        //velocityから移動速度を取得して移動速度がMaxSpeed以下の場合だけ移動キーが効くようにしました。
-        //Debug.Log("PlayerConのUpdateは機能しています");
+
+        //velocity???????????x?????????????????x??MaxSpeed???????????????????L?[?????????????????????B
+        //Debug.Log("PlayerCon??Update???@?\??????????");
+
+        if (Mathf.Abs(veloX) < MaxSpeed)
+        {
             if (Input.GetKey(KeyCode.A))
             {
-            //Debug.Log("Aキーが押されました");
-                if (veloX >= -MaxSpeed)
-                {
-                    sp.flipX = false;
-                    rb.AddForce(-speed);
-                //Debug.Log("左に力が加わっています");
+                //Debug.Log("A?L?[??????????????");
+                sp.flipX = false;
+                rb.AddForce(-speed);
+                //Debug.Log("??????????????????????");
                 anim.SetBool("run", true);
-                }
+
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                if (veloX <= MaxSpeed)
-                {
+
                 sp.flipX = true;
                 rb.AddForce(speed);
 
-                //Debug.Log("右に力が加わっています");
+                //Debug.Log("?E????????????????????");
                 anim.SetBool("run", true);
-                }
             }
+        }
 
-            if(veloX < 2 && veloX > -2)
-            {
-                anim.SetBool("run", false);
-                //Debug.Log("力がほとんど加わっていない");
-            }
+        if (veloX < 2 && veloX > -2)
+        {
+            anim.SetBool("run", false);
+            //Debug.Log("??????????????????????????");
+        }
 
-            if(veloY < -1)      //just falling now
-            {
-                anim.SetBool("isFall", true);
-                nowjump = true;
-                //Debug.Log("isFallをtrueにしました");
-            }
+        if (veloY < -1)      //just falling now
+        {
+            anim.SetBool("isFall", true);
+            nowjump = true;
+            //Debug.Log("isFall??true??????????");
+        }
 
-            if(veloY > 0.1) // just jumping now
-            {
-                nowjump = true;
-            }
+        if (veloY > 0.1) // just jumping now
+        {
+            nowjump = true;
+        }
 
-        //Debug.Log(veloX); //←これでConsoleにスピードを表示してデバッグしました（また詰まったら使うかもしれない）
+        //Debug.Log(veloX); //????????Console???X?s?[?h???\???????f?o?b?O?????????i?????l?????????g???????????????j
 
 
         velo = rb.velocity;
-        veloX = velo.x;      //velocityのX座標を取得。これをすることにより、スピードを取得できる
+        veloX = velo.x;      //velocity??X???W???????B?????????????????????A?X?s?[?h????????????
         veloY = velo.y;
 
-        //↑なんでveloXの宣言をUpdateの中で行うのかというと、常時この変数を更新したいから
+        //????????veloX????????Update???????s???????????????A???????????????X?V??????????
 
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump(rb, jumpLvl);//ジャンプさせる
+            Jump(rb, jumpLvl);//?W?????v??????
             anim.SetBool("isJump", true);
         }
 
-        if(TF.position.y <= -13)
+        if (TF.position.y <= -13)
         {
-            Debug.Log("奈落に落ちました");
+            Debug.Log("????????????????");
             Death();
         }
     }
@@ -128,7 +128,7 @@ public class PlayerCon : MonoBehaviour
         {
             anim.SetBool("isJump", false);
             anim.SetBool("isFall", false);
-            //Debug.Log("地面に付きました");
+            //Debug.Log("?n?????t????????");
             veloY = 0;
             velo.y = veloY;
         }
@@ -142,18 +142,18 @@ public class PlayerCon : MonoBehaviour
 
             anim.SetBool("isJump", false);
             anim.SetBool("isFall", false);
-            //Debug.Log("地面に付きました");
+            //Debug.Log("?n?????t????????");
         }
 
         if(collision.gameObject.CompareTag("Enemy"))
         {
             /*Death();
-            Debug.Log("死にました");
+            Debug.Log("??????????");
         }*/
 
         if (collision.gameObject.CompareTag("DamageGround"))
         {
-            Debug.Log("ダメージ床に触れました");
+            Debug.Log("?_???[?W?????G????????");
             Death();
         }
     }
@@ -162,17 +162,17 @@ public class PlayerCon : MonoBehaviour
     {
         int goal = 0;
 
-        if(goal == 0)
+        if (goal == 0)
         {
             if (col.gameObject.CompareTag("Goal"))
             {
-                Debug.Log("ゴールしました");
+                Debug.Log("?S?[??????????");
                 gcon.Goal();
             }
             goal = 1;
         }
 
-        /*if(col.gameObject.CompareTag("ELeft"))//            敵に触れたら....
+        /*if(col.gameObject.CompareTag("ELeft"))//            ?G???G??????....
         {
             Lefter = GameObject.Find("Enemy");
             Lefter.GetComponent<EnemyCon>().OnLeft();
@@ -187,7 +187,7 @@ public class PlayerCon : MonoBehaviour
 
     void Jump(Rigidbody2D rb, float lvl)
     {
-        if(nowjump == false)
+        if (nowjump == false)
         {
             nowjump = true;
 
@@ -198,9 +198,9 @@ public class PlayerCon : MonoBehaviour
 
     public void Death()
     {
-        // 現在のSceneを取得
+        // ??????Scene??????
         //Scene loadScene = SceneManager.GetActiveScene();
-        // 現在のシーンを再読み込みする
+        // ???????V?[??????????????????
         SceneManager.LoadScene(GlobalVariables.NowScene);
     }
 
@@ -219,7 +219,7 @@ public class PlayerCon : MonoBehaviour
             //Debug.Log("Ground");
             //want to do above code
         }
-        else if(col.gameObject.CompareTag("EUp"))
+        else if (col.gameObject.CompareTag("EUp"))
         {
             GameObject parenter = col.transform.parent.gameObject;//get parent of up
 
