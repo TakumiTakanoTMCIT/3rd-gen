@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyCon : MonoBehaviour
 {
-    Transform myTransform;
-
     public float speed = 1.0f;
     public float powerX = 1.0f;
 
@@ -13,34 +12,38 @@ public class EnemyCon : MonoBehaviour
 
     GameObject enemymanager;
 
+    SpriteRenderer sp;
+
     // Start is called before the first frame update
     void Start()
     {
-        // transformを取得
-        myTransform = this.transform;
-
         enemymanager = GameObject.Find("EnemyDeathUIManager");
+
+        sp = this.GetComponent<SpriteRenderer>();
+        sp.flipX = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // ワールド座標を基準に、座標を取得
-        Vector3 worldPos = myTransform.position;
+        Vector3 worldPos = this.transform.position;
 
         worldPos.x += speed*powerX*Time.deltaTime;    // ワールド座標を基準にした、x座標を1に変更
 
-        myTransform.position = worldPos;  // ワールド座標での座標を設定
+        this.transform.position = worldPos;  // ワールド座標での座標を設定
     }
 
     public void OnRight()
     {
         powerX = -1.0f;
+        sp.flipX = false;
     }
 
     public void OnLeft()
     {
         powerX = 1.0f;
+        sp.flipX = true;
     }
 
     public void Death()

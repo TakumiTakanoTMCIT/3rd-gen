@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a357f7fdfb988246879915baa6a9b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.8
+  speed: 0.4
   powerX: 1
   enemyImage: {fileID: 0}
 --- !u!50 &7194014455935079353
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 5
 --- !u!61 &7194014455935079352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.26536834, y: 0.89}
+  m_Offset: {x: 0.26536834, y: 1.0243616}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -305,7 +305,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6792638, y: 0.13543034}
+  m_Size: {x: 3.6792638, y: 0.40415394}
   m_EdgeRadius: 0
 --- !u!50 &7194014456017192567
 Rigidbody2D:
@@ -335,7 +335,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7194014456017192564}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dda684b39f4e17a429eba2139a0930eb, type: 3}
   m_Name: 
