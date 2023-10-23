@@ -17,8 +17,6 @@ public class GoalCon : MonoBehaviour
     RectTransform rect;
     Image imager;
 
-    float time = 0.2f;
-
     public float count = 0;
 
     bool isGoal = false;
