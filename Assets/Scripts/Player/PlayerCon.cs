@@ -118,7 +118,7 @@ public class PlayerCon : MonoBehaviour
 
         if (TF.position.y <= -13)
         {
-            Debug.Log("????????????????");
+            Debug.Log("player fall into the hell ");
             Death();
         }
     }
@@ -128,7 +128,7 @@ public class PlayerCon : MonoBehaviour
         {
             anim.SetBool("isJump", false);
             anim.SetBool("isFall", false);
-            //Debug.Log("?n?????t????????");
+            //Debug.Log("player is on ground");
             veloY = 0;
             velo.y = veloY;
         }
@@ -153,7 +153,7 @@ public class PlayerCon : MonoBehaviour
 
         if (collision.gameObject.CompareTag("DamageGround"))
         {
-            Debug.Log("?_???[?W?????G????????");
+            Debug.Log("player stamp the damageGround ");
             Death();
         }
     }
@@ -166,7 +166,7 @@ public class PlayerCon : MonoBehaviour
         {
             if (col.gameObject.CompareTag("Goal"))
             {
-                Debug.Log("?S?[??????????");
+                Debug.Log("Player Goal!!!");
                 gcon.Goal();
             }
             goal = 1;
