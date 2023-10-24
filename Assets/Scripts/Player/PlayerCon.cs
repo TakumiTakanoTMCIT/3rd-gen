@@ -83,7 +83,7 @@ public class PlayerCon : MonoBehaviour
                 }
             }
 
-        if (veloX < 2 && veloX > -2)
+        if (Mathf.Abs(veloX) < 2)
         {
             anim.SetBool("run", false);
             //Debug.Log("??????????????????????????");
