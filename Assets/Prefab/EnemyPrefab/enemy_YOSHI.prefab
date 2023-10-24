@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &523738130977301116
 Transform:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!114 &523738130977301117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,10 +106,10 @@ GameObject:
   - component: {fileID: 523738131075930318}
   - component: {fileID: 523738131075930353}
   - component: {fileID: 523738131075930352}
-  - component: {fileID: 523738131075930319}
+  - component: {fileID: 1191591284}
   m_Layer: 0
   m_Name: Up
-  m_TagString: EUp
+  m_TagString: JumpingEUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,8 +175,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!114 &523738131075930319
+  m_Constraints: 0
+--- !u!114 &1191591284
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 523738131075930317}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dda684b39f4e17a429eba2139a0930eb, type: 3}
+  m_Script: {fileID: 11500000, guid: fc429047bb02c374d9e4559eb95277d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Econ: {fileID: 523738131671292911}
@@ -201,6 +201,8 @@ GameObject:
   - component: {fileID: 523738131671292908}
   - component: {fileID: 523738131671292911}
   - component: {fileID: 523738131671292910}
+  - component: {fileID: 946685703}
+  - component: {fileID: 946685704}
   m_Layer: 0
   m_Name: enemy_YOSHI
   m_TagString: Enemy
@@ -286,7 +288,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523738131671292907}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a357f7fdfb988246879915baa6a9b93, type: 3}
   m_Name: 
@@ -320,6 +322,41 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 1.5672729}
   m_EdgeRadius: 0
+--- !u!50 &946685703
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523738131671292907}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 2.5
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &946685704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523738131671292907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbae23edd40f7a6488fa9298b92875c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 1356
+  timedelay: 4
 --- !u!1 &523738131732301312
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,10 +368,10 @@ GameObject:
   - component: {fileID: 523738131732301313}
   - component: {fileID: 523738131732301316}
   - component: {fileID: 523738131732301315}
-  - component: {fileID: 523738131732301314}
+  - component: {fileID: 1191591283}
   m_Layer: 0
   m_Name: Down
-  m_TagString: EDown
+  m_TagString: JumpingEDown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,8 +437,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
---- !u!114 &523738131732301314
+  m_Constraints: 0
+--- !u!114 &1191591283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,7 +447,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 523738131732301312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4b8600baffecfa4da865e246e257dc3, type: 3}
+  m_Script: {fileID: 11500000, guid: e7cc50248261e1a4c8409ab35c90612d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   con: {fileID: 0}
@@ -432,7 +469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &523738131764624698
 Transform:
   m_ObjectHideFlags: 0
@@ -508,4 +545,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0

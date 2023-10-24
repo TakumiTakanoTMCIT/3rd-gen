@@ -22,6 +22,8 @@ TagManager:
   - Coin
   - Atari
   - ATARI
+  - JumpingEUp
+  - JumpingEDown
   layers:
   - Default
   - TransparentFX

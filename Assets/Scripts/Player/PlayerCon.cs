@@ -54,12 +54,6 @@ public class PlayerCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(speed + "  " + movingSpeed);
-        //Debug.Log(isJumping);
-
-        //velocity???????????x?????????????????x??MaxSpeed???????????????????L?[?????????????????????B
-        //Debug.Log("PlayerCon??Update???@?\??????????");
-
             if (Input.GetKey(KeyCode.A))
             {
                 if(veloX >= -MaxSpeed)
@@ -137,21 +131,6 @@ public class PlayerCon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.gameObject.CompareTag("Grounds") || collision.gameObject.CompareTag("Object"))
-        {
-            isJumping = false;
-
-            anim.SetBool("isJump", false);
-            anim.SetBool("isFall", false);
-            //Debug.Log("?n?????t????????");
-        }
-
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            /*Death();
-            Debug.Log("??????????");
-        }*/
-
         if (collision.gameObject.CompareTag("DamageGround"))
         {
             Debug.Log("player stamp the damageGround ");
@@ -172,18 +151,6 @@ public class PlayerCon : MonoBehaviour
             }
             goal = 1;
         }
-
-        /*if(col.gameObject.CompareTag("ELeft"))//            ?G???G??????....
-        {
-            Lefter = GameObject.Find("Enemy");
-            Lefter.GetComponent<EnemyCon>().OnLeft();
-        }
-
-        if(col.gameObject.CompareTag("ERight"))
-        {
-            Righter = GameObject.Find("Right");
-            Righter.GetComponent<EnemyCon>().OnRight();
-        }*/
     }
 
     void Jump(Rigidbody2D rb, float lvl)
@@ -199,9 +166,6 @@ public class PlayerCon : MonoBehaviour
 
     public void Death()
     {
-        // ??????Scene??????
-        //Scene loadScene = SceneManager.GetActiveScene();
-        // ???????V?[??????????????????
         SceneManager.LoadScene(GlobalVariables.NowScene);
     }
 
@@ -229,6 +193,18 @@ public class PlayerCon : MonoBehaviour
             econ.Death();//do KANSUU(death()) 
 
             //Debug.Log(parenter + "  " + col.gameObject);
+
+            nowjump = true;
+
+            rb.velocity = new Vector2(rb.velocity.x, 0f);                   // Init Y velocity
+            rb.AddForce(Vector2.up * jumpLvl, ForceMode2D.Impulse);             // Add Up force
+        }
+        else if (col.gameObject.CompareTag("JumpingEUp"))
+        {
+            GameObject parenter = col.transform.parent.gameObject;//get parent of up
+            JumpingEnemyCon econ = parenter.GetComponent(typeof(JumpingEnemyCon)) as JumpingEnemyCon; // get component of enemycon 
+
+            econ.Death();//do KANSUU(death()) 
 
             nowjump = true;
 
