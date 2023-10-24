@@ -4551,7 +4551,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.008
   powerX: 1
-  gravityScale: 0
   enemyImage: {fileID: 0}
 --- !u!1001 &749417828
 PrefabInstance:
@@ -12427,30 +12426,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemy_IYOU
       objectReference: {fileID: 0}
-    - target: {fileID: 7194014455935079353, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: m_Simulated
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7194014455935079353, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7194014455935079353, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7194014455935079353, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7194014455935079354, guid: afd29335a20c082419028f3b170a2f51, type: 3}
       propertyPath: enemyImage
       value: 
       objectReference: {fileID: 217507818}
-    - target: {fileID: 7194014455935079354, guid: afd29335a20c082419028f3b170a2f51, type: 3}
-      propertyPath: gravityScale
-      value: 0.0001
-      objectReference: {fileID: 0}
     - target: {fileID: 7194014455935079356, guid: afd29335a20c082419028f3b170a2f51, type: 3}
       propertyPath: m_RootOrder
       value: 15

@@ -80,7 +80,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!114 &7194014455531206278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +220,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!61 &7194014455935079352
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!114 &7194014456017192566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +421,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
 --- !u!114 &7194014456267079454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,4 +530,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 0
